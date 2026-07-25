@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NULL;SPACE 브랜드 광고 스토리보드</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;600;700&display=swap');
+
+    :root {
+      --green: #00ff88;
+      --green-dim: #00cc66;
+      --bg: #0a0a0a;
+      --bg2: #111111;
+      --bg3: #1a1a1a;
+      --border: #2a2a2a;
+      --text: #e0e0e0;
+      --text-dim: #888888;
+      --accent: #00ff88;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .mono { font-family: 'JetBrains Mono', monospace; }
+
+    /* 인쇄 시 배경 포함 */
+    @media print {
+      body { background: #0a0a0a !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page-break { page-break-before: always; }
+      .no-break { page-break-inside: avoid; }
+    }
+
+    /* ── 레이아웃 ── */
+    .container { max-width: 900px; margin: 0 auto; padding: 48px 40px; }
+
+    /* ── 표지 ── */
+    .cover {
+      min-height: 260px;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      border-radius: 4px;
+      padding: 48px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+    }
+    .cover-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--green-dim);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .cover-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 42px;
+      font-weight: 700;
+      color: var(--green);
+      letter-spacing: -1px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .cover-sub {
+      font-size: 15px;
+      color: var(--text-dim);
+      margin-bottom: 32px;
+    }
+    .cover-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .cover-meta-item label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .cover-meta-item span {
+      font-size: 13px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* ── 섹션 타이틀 ── */
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      background: rgba(0,255,136,0.08);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+    .section-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── 테이블 ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 12px;
+    }
+    th {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: left;
+      padding: 8px 12px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+    }
+    td {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      vertical-align: top;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    td:first-child {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--green-dim);
+      white-space: nowrap;
+      width: 160px;
+      background: rgba(0,255,136,0.03);
+    }
+    tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── 씬 카드 ── */
+    .scene-card {
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      margin-bottom: 28px;
+      overflow: hidden;
+    }
+    .scene-card-header {
+      background: var(--bg3);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .scene-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--bg);
+      background: var(--green);
+      padding: 3px 10px;
+      border-radius: 2px;
+      letter-spacing: 1px;
+    }
+    .scene-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .scene-duration {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-left: auto;
+    }
+    .scene-card table {
+      margin: 0;
+    }
+    .scene-card table td, .scene-card table th {
+      border-left: none;
+      border-right: none;
+    }
+    .scene-card table tr:first-child th { border-top: none; }
+    .scene-card table tr:last-child td { border-bottom: none; }
+
+    /* ── 프롬프트 수정 로그 ── */
+    .diff-box {
+      margin: 16px 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .diff-header {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--green);
+      background: rgba(0,255,136,0.06);
+      padding: 8px 14px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 1px;
+    }
+    .diff-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .diff-row:last-child { border-bottom: none; }
+    .diff-cell {
+      padding: 12px 14px;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .diff-cell:first-child {
+      border-right: 1px solid var(--border);
+      background: rgba(255, 80, 80, 0.04);
+    }
+    .diff-cell:last-child {
+      background: rgba(0, 255, 136, 0.04);
+    }
+    .diff-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .diff-label.before { color: #ff6666; }
+    .diff-label.after { color: var(--green); }
+    .diff-reason {
+      padding: 10px 14px;
+      font-size: 12px;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      background: var(--bg3);
+    }
+
+    /* ── 코드 블록 ── */
+    .prompt-block {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--green-dim);
+      padding: 10px 14px;
+      border-radius: 0 2px 2px 0;
+      color: #cce;
+      line-height: 1.5;
+      margin: 4px 0;
+      word-break: break-all;
+    }
+
+    /* ── 도구 뱃지 ── */
+    .tool-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .tool-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 2px;
+      background: rgba(0,255,136,0.08);
+      color: var(--green-dim);
+      border: 1px solid rgba(0,255,136,0.2);
+    }
+
+    /* ── 영상 스펙 박스 ── */
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .spec-item {
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 12px 14px;
+      background: var(--bg2);
+    }
+    .spec-item label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .spec-item span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    /* ── 체크리스트 ── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      font-size: 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-icon {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: var(--green);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── 푸터 ── */
+    .footer {
+      margin-top: 48px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-brand {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .footer-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--text-dim);
+      text-align: right;
+    }
+
+    /* 씬 타임라인 */
+    .timeline {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin-bottom: 36px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .tl-item {
+      flex: 1;
+      padding: 14px 16px;
+      background: var(--bg2);
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .tl-item:last-child { border-right: none; }
+    .tl-time {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+    }
+    .tl-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 4px;
+    }
+    .tl-desc { font-size: 11px; color: var(--text-dim); }
+    .tl-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), var(--green-dim));
+      margin-top: 10px;
+      border-radius: 2px;
+    }
+    .tl-bar.s1 { width: 30%; }
+    .tl-bar.s2 { width: 40%; }
+    .tl-bar.s3 { width: 30%; }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 표지 -->
+  <div class="cover">
+    <div class="cover-tag mono">// B1-2 Brand Ad Storyboard</div>
+    <div class="cover-title">NULL;SPACE</div>
+    <div class="cover-sub">1인 개발자·프리랜서를 위한 카페 — 브랜드 인지도 광고</div>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>광고 길이</label>
+        <span>16초</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>씬 구성</label>
+        <span>3씬</span>
+      </div>
+      <div class="cover-meta-item">
+        <label>핵심 메시지</label>
+        <span>"예외는 없다. 오직 코드와 커피만."</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. 브랜드 아이덴티티 -->
+  <div class="section no-break">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <span class="section-title">브랜드 아이덴티티</span>
+    </div>
+    <table>
+      <tr><td>브랜드명</td><td><strong>NULL;SPACE</strong></td></tr>
+      <tr><td>카테고리</td><td>1인 개발자·프리랜서 전용 카페</td></tr>
+      <tr><td>타겟</td><td>MZ 세대 개발자, 게이머, 프리랜서</td></tr>
+      <tr><td>톤앤매너</td><td>터미널 감성 + 글리치 / 다크·쿨·엣지</td></tr>
+      <tr><td>USP</td><td>코드를 짜는 사람을 위해 설계된 공간 — 집중 환경, 개발자 감성 인테리어, 무한 리필 카페인</td></tr>
+      <tr><td>광고 목적</td><td>브랜드 인지도 상승</td></tr>
+      <tr>
+        <td>핵심 메시지</td>
+        <td>
+          <strong>"예외는 없다. 오직 코드와 커피만."</strong><br/>
+          <span style="color:var(--text-dim); font-size:12px;">
+            메시지 의도: "예외(Exception)"는 프로그래밍 용어이자 일반어. 개발자에게는 즉각 인식되는 이스터에그, 일반인에게는 "흔들림 없는 공간"으로 읽힘.
+          </span>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 2. 씬 타임라인 -->
+  <div class="section no-break">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <span class="section-title">씬 타임라인 개요</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-time">0 — 4초</div>
+        <div class="tl-name">SCN_01 :: BOOT</div>
+        <div class="tl-desc">터미널 코드 비 등장</div>
+        <div class="tl-bar s1"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">4 — 10초</div>
+        <div class="tl-name">SCN_02 :: TRANSFORM</div>
+        <div class="tl-desc">코드 → 커피 글리치 전환</div>
+        <div class="tl-bar s2"></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">10 — 16초</div>
+        <div class="tl-name">SCN_03 :: LOGO OUT</div>
+        <div class="tl-desc">브랜드 각인 + CTA</div>
+        <div class="tl-bar s3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 씬별 스토리보드 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <span class="section-title">씬별 스토리보드</span>
+    </div>
+
+    <!-- 씬 1 -->
+    <div class="scene-card no-break">
+      <div class="scene-card-header">
+        <span class="scene-badge">SCN 01</span>
+        <span class="scene-name">BOOT</span>
+        <span class="scene-duration">0 — 4초 (4초)</span>
+      </div>
+      <table>
+        <tr><td>목표 메시지</td><td>이 광고가 개발자를 위한 것임을 0.5초 안에 각인</td></tr>
+        <tr>
+          <td>화면 구성</td>
+          <td>
+            완전한 검정 화면 / 초록 모노스페이스 폰트로 코드 비(rain)처럼 흘러내림<br/>
+            중앙에 커서(█) 깜박임 / 텍스트 없음
+          </td>
+        </tr>
+        <tr><td>내레이션</td><td><em>"예외 처리 없이 살아온 당신에게,"</em></td></tr>
+        <tr>
+          <td>사용 도구</td>
+          <td>
+            <div class="tool-list">
+              <span class="tool-badge">GPT (DALL-E 3)</span>
+              <span class="tool-badge">Google Flow (Veo 3.1)</span>
+            </div>
+            <div style="margin-top:8px; font-size:12px; color:var(--text-dim);">
+              GPT (DALL-E 3): 터미널 코드 비주얼 키이미지 생성<br/>
+              Google Flow (Veo 3.1): 모션 변환 + 한국어 나레이션 + 효과음 통합 생성
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>입력 프롬프트</td>
+          <td>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green-dim); letter-spacing:1px; margin-bottom:6px;">IMAGE PROMPT (GPT / DALL-E 3)</div>
+            <div class="prompt-block">A cinematic still image of a pure black screen completely filled with cascading bright phosphor-green monospace code characters, resembling a terminal matrix rain effect. The characters vary in brightness and blur at different depths, creating a convincing sense of vertical motion and depth of field. At the exact center of the frame, a single solid block cursor (█) glows with sharp focus and slightly brighter green than the surrounding characters. The entire color palette is strictly limited to near-black (#0a0a0a) background and phosphor green (#00ff88) characters — no other colors. No people, no objects, no brand text. The mood must feel cold, hyper-focused, and intense. Cinematic quality, 16:9 aspect ratio.</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green-dim); letter-spacing:1px; margin:10px 0 6px;">VIDEO PROMPT (Google Flow / Veo 3.1) — Duration: 4s</div>
+            <div class="prompt-block">Duration: 4 seconds. Green code characters cascade continuously downward, like a steady rainfall across the entire frame. The central block cursor blinks slowly at a 1-second interval. Camera is completely still. Smooth, looping motion. Atmosphere: cold, hypnotic. Audio: mechanical keyboard typing sounds as ambient background. A calm, cold, low-pitched Korean male voice narrates slowly: "예외 처리 없이 살아온 당신에게," Voice tone: dry, emotionless, like a system reading aloud. No music yet — only typing sounds and voice.</div>
+          </td>
+        </tr>
+        <tr><td>출력 결과 요약</td><td>검정+초록 코드 비주얼, 터미널 감성 강한 키비주얼 확보</td></tr>
+        <tr>
+          <td>결과 파일명</td>
+          <td>
+            <span class="mono" style="font-size:12px; color:var(--green-dim);">scene01_terminal.png</span><br/>
+            <span class="mono" style="font-size:12px; color:var(--green-dim);">scene01_motion.mp4</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 씬 2 -->
+    <div class="scene-card no-break">
+      <div class="scene-card-header">
+        <span class="scene-badge">SCN 02</span>
+        <span class="scene-name">TRANSFORM</span>
+        <span class="scene-duration">4 — 10초 (6초)</span>
+      </div>
+      <table>
+        <tr><td>목표 메시지</td><td>코드가 커피로 변환되는 순간 — 브랜드 세계관 충격 전달</td></tr>
+        <tr>
+          <td>화면 구성</td>
+          <td>
+            코드 비가 점점 커피잔 실루엣으로 수렴 / 글리치 효과로 전환<br/>
+            카페 내부 공간(어두운 조명, 모니터 여러 대, 혼자 앉은 실루엣) 등장 / 텍스트 없음
+          </td>
+        </tr>
+        <tr><td>내레이션</td><td><em>"드디어, 당신만의 공간이 실행됩니다."</em></td></tr>
+        <tr>
+          <td>사용 도구</td>
+          <td>
+            <div class="tool-list">
+              <span class="tool-badge">GPT (DALL-E 3)</span>
+              <span class="tool-badge">Google Flow (Veo 3.1)</span>
+            </div>
+            <div style="margin-top:8px; font-size:12px; color:var(--text-dim);">
+              GPT (DALL-E 3): 코드→커피 변환 장면 및 카페 내부 이미지 생성<br/>
+              Google Flow (Veo 3.1): 글리치 모션 변환 + 한국어 나레이션 + BGM·효과음 통합 생성
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>입력 프롬프트</td>
+          <td>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green-dim); letter-spacing:1px; margin-bottom:6px;">IMAGE PROMPT (GPT / DALL-E 3)</div>
+            <div class="prompt-block">A dramatic cinematic still image showing a visual transformation: streams of bright phosphor-green terminal code characters (matrix-style cascade) flowing downward and converging to form the perfect silhouette of a steaming coffee cup at the center. The coffee cup shape is constructed entirely from densely packed glowing green code. Behind the cup, a moody dark cafe interior is partially visible: three or four large monitor screens emit soft blue-green glow, a single human figure silhouetted in the distance against the monitors (no face visible), minimal dark industrial furniture. The edges have subtle digital glitch distortion — horizontal scanline tears and slight chromatic aberration. Color palette: near-black background, phosphor green (#00ff88) code, soft cyan-blue monitor glow. No brand text. Cinematic, 16:9.</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green-dim); letter-spacing:1px; margin:10px 0 6px;">VIDEO PROMPT (Google Flow / Veo 3.1) — Duration: 6s</div>
+            <div class="prompt-block">Duration: 6 seconds. The code streams slow and converge inward toward the coffee cup silhouette at the center, as if being magnetically pulled. As they converge, strong digital glitch effects fire — sharp horizontal screen tears, RGB channel split, and brief chromatic aberration across the frame. The cafe background sharpens and becomes more defined. Subtle camera push-in toward the coffee cup. Speed: slow to medium. Audio: typing sounds fade out and a low-fi beat fades in softly. A calm, cold, low-pitched Korean male voice narrates: "드디어, 당신만의 공간이 실행됩니다." Voice tone: same dry, system-like delivery as scene 1. Glitch sound effect fires briefly in sync with the visual glitch.</div>
+          </td>
+        </tr>
+        <tr><td>출력 결과 요약</td><td>코드→커피 전환 장면, 1인 개발자 카페 분위기 확보</td></tr>
+        <tr>
+          <td>결과 파일명</td>
+          <td>
+            <span class="mono" style="font-size:12px; color:var(--green-dim);">scene02_transform.png</span><br/>
+            <span class="mono" style="font-size:12px; color:var(--green-dim);">scene02_motion.mp4</span>
+          </td>
+        </tr>
+      </table>
+
+      <!-- 프롬프트 수정 전/후 -->
+      <div style="padding: 16px 20px; border-top: 1px solid var(--border);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--green); letter-spacing: 1px; margin-bottom: 10px;">// PROMPT ITERATION LOG — SCN 02</div>
+        <div class="diff-box">
+          <div class="diff-header">수정 전 / 후 비교</div>
+          <div class="diff-row">
+            <div class="diff-cell">
+              <div class="diff-label before">─ BEFORE</div>
+              <div class="prompt-block" style="border-left-color: #ff6666; background: rgba(255,80,80,0.04);">A coffee shop with a programmer working on a laptop, computers around, cozy atmosphere</div>
+            </div>
+            <div class="diff-cell">
+              <div class="diff-label after">+ AFTER</div>
+              <div class="prompt-block" style="border-left-color: var(--green);">A dramatic cinematic still image showing streams of phosphor-green terminal code converging into a coffee cup silhouette, dark cafe interior with multiple monitor screens, lone silhouetted figure, glitch distortion at edges, near-black palette with cyan monitor glow, 16:9</div>
+            </div>
+          </div>
+          <div class="diff-reason">
+            <strong style="color: var(--text);">수정 이유:</strong> 초안 프롬프트가 일반 밝은 카페 이미지를 생성하여 NULL;SPACE 세계관과 완전히 불일치. "코드가 커피로 변환된다"는 브랜드 핵심 은유를 시각화하기 위해 코드→커피잔 실루엣 수렴 모티프를 명시하고, 다크 카페 환경과 글리치 효과를 구체적으로 기술.<br/>
+            <strong style="color: var(--text);">결과 변화:</strong> 터미널 감성과 카페 공간이 결합된 독창적 비주얼로 개선, 타 카페 광고와 즉각 구분 가능.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 씬 3 -->
+    <div class="scene-card no-break">
+      <div class="scene-card-header">
+        <span class="scene-badge">SCN 03</span>
+        <span class="scene-name">LOGO OUT</span>
+        <span class="scene-duration">10 — 16초 (6초)</span>
+      </div>
+      <table>
+        <tr><td>목표 메시지</td><td>NULL;SPACE = 개발자 카페 브랜드명 각인</td></tr>
+        <tr>
+          <td>화면 구성</td>
+          <td>
+            검정 배경 + 중앙 초록 빛 번짐 / <strong>NULL;SPACE</strong> 브랜드명 터미널 타이핑 효과로 한 글자씩 등장<br/>
+            아래 슬로건 페이드인: <em>"예외는 없다. 오직 코드와 커피만."</em> / Google Flow가 텍스트·로고·나레이션 통합 생성
+          </td>
+        </tr>
+        <tr><td>내레이션</td><td><em>"예외는 없다. 오직 코드와 커피만."</em></td></tr>
+        <tr>
+          <td>사용 도구</td>
+          <td>
+            <div class="tool-list">
+              <span class="tool-badge">GPT (DALL-E 3)</span>
+              <span class="tool-badge">Google Flow (Veo 3.1)</span>
+            </div>
+            <div style="margin-top:8px; font-size:12px; color:var(--text-dim);">
+              GPT (DALL-E 3): 로고 등장용 다크 배경 이미지 생성<br/>
+              Google Flow (Veo 3.1): 브랜드명 타이핑 효과 + 슬로건 페이드인 + 한국어 나레이션 통합 생성
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>입력 프롬프트</td>
+          <td>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green-dim); letter-spacing:1px; margin-bottom:6px;">IMAGE PROMPT (GPT / DALL-E 3)</div>
+            <div class="prompt-block">A minimalist cinematic background image. Pure deep black background with a very soft radial glow of phosphor green (#00ff88) light radiating from the center. Across the lower third, very faint horizontal scanlines add CRT monitor texture. A barely visible blinking block cursor (█) sits at the center of the frame. The upper two-thirds must be clean near-black — no elements — to serve as a canvas for brand logo. No text rendered in the image itself. No people, no objects, no warm colors. Authoritative, cold, and precise. Aspect ratio 16:9.</div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--green-dim); letter-spacing:1px; margin:10px 0 6px;">VIDEO PROMPT (Google Flow / Veo 3.1) — Duration: 6s</div>
+            <div class="prompt-block">Duration: 6 seconds. The green ambient glow at the center breathes slowly — gently brightening then dimming once. The CRT scanlines scroll upward at a very slow pace. The block cursor blinks once every second. At the center of the screen, the brand name "NULL;SPACE" appears letter by letter, as if being typed by a terminal — monospace font, phosphor green (#00ff88). After the brand name fully appears, the slogan fades in below it: "예외는 없다. 오직 코드와 커피만." Both texts remain on screen until the clip ends. Camera completely still. No sudden movement. Mood: quiet, authoritative. Audio: low-fi beat fades to silence as the brand name appears. A calm, cold, low-pitched Korean male voice narrates with finality: "예외는 없다. 오직 코드와 커피만." Voice tone: slightly slower and more deliberate — this is the line that must be remembered. Ends in complete silence.</div>
+          </td>
+        </tr>
+        <tr><td>출력 결과 요약</td><td>로고 등장 배경 이미지, 브랜드 각인 컷 확보</td></tr>
+        <tr>
+          <td>결과 파일명</td>
+          <td>
+            <span class="mono" style="font-size:12px; color:var(--green-dim);">scene03_logo.png</span><br/>
+            <span class="mono" style="font-size:12px; color:var(--green-dim);">scene03_final.mp4</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- 4. 사용 도구 목록 -->
+  <div class="section no-break page-break">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <span class="section-title">사용 도구 목록</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>카테고리</th>
+          <th>주 도구</th>
+          <th>선택 이유</th>
+          <th>대체 도구</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>이미지 생성</td>
+          <td>GPT (DALL-E 3)</td>
+          <td>자연어 프롬프트로 복잡한 합성 장면 표현 용이, 접근성 높음</td>
+          <td>Runware (FLUX), Midjourney, Ideogram</td>
+        </tr>
+        <tr>
+          <td>비디오·오디오·나레이션·편집</td>
+          <td>Google Flow (Veo 3.1)</td>
+          <td>영상·한국어 음성·효과음·BGM·편집을 단일 플랫폼에서 통합 처리. 유료 플랜으로 전 기능 사용 가능</td>
+          <td>비디오: Runway Gen-3, Kling, Pika / 오디오: Suno, ElevenLabs</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 5. 최종 영상 스펙 -->
+  <div class="section no-break">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <span class="section-title">최종 영상 스펙</span>
+    </div>
+    <div class="spec-grid">
+      <div class="spec-item">
+        <label>길이</label>
+        <span>16초</span>
+      </div>
+      <div class="spec-item">
+        <label>해상도</label>
+        <span>1920×1080</span>
+      </div>
+      <div class="spec-item">
+        <label>프레임레이트</label>
+        <span>30fps</span>
+      </div>
+      <div class="spec-item">
+        <label>비디오 코덱</label>
+        <span>H.264</span>
+      </div>
+      <div class="spec-item">
+        <label>오디오 코덱</label>
+        <span>AAC</span>
+      </div>
+      <div class="spec-item">
+        <label>파일명</label>
+        <span style="font-size:11px;">NULLSPACE_ad_v1.mp4</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. 제약 사항 체크리스트 -->
+  <div class="section no-break">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <span class="section-title">제약 사항 체크리스트</span>
+    </div>
+    <ul class="checklist">
+      <li><span class="check-icon">[✓]</span> 모든 시각·청각 소스는 AI 생성 결과물만 사용 (직접 촬영, 유료 스톡 금지)</li>
+      <li><span class="check-icon">[✓]</span> Google Flow (Veo 3.1)로 영상·음성·편집 통합 처리 — 핵심 비주얼·오디오 모두 AI 생성 결과물</li>
+      <li><span class="check-icon">[✓]</span> 딥페이크·혐오·선정·폭력 콘텐츠 없음</li>
+      <li><span class="check-icon">[✓]</span> Runware에서 이미지 확정 후 Google Flow 변환 진행 (크레딧 낭비 방지)</li>
+      <li><span class="check-icon">[✓]</span> 씬 3 (7~10초) 에 브랜드명 + 슬로건 + CTA 포함</li>
+      <li><span class="check-icon">[✓]</span> 기승전결 구조 확보 — 문제 제시(BOOT) → 전환(TRANSFORM) → 해결/제안(LOGO OUT)</li>
+      <li><span class="check-icon">[✓]</span> 이미지·비디오·오디오 각 카테고리 대체 도구 1개 이상 명시</li>
+    </ul>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer">
+    <div class="footer-brand">NULL;SPACE</div>
+    <div class="footer-meta">
+      B1-2 AI 기반 브랜드 광고 패키지<br/>
+      storyboard v1.0
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
