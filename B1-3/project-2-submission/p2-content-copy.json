@@ -1,0 +1,467 @@
+{
+  "id": "b13Project2Workflow",
+  "name": "P2 · 콘텐츠 문구 자동 생성",
+  "active": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "minutes",
+              "minutesInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "38b4a1c2-ce9e-43a6-a915-70b95fcf6f9b",
+      "name": "1분마다 자동 실행",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -800,
+        208
+      ],
+      "notesInFlow": true,
+      "notes": "노션의 프로젝트 2 생성 요청을 1분마다 확인합니다."
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "dataSourceId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "0df4ef81-d59a-4b74-9200-3357fa5b76d5"
+        },
+        "limit": 10,
+        "filterType": "json",
+        "filterJson": "{\"and\":[{\"property\":\"작업 구분\",\"select\":{\"equals\":\"프로젝트 2\"}},{\"property\":\"상태\",\"select\":{\"equals\":\"생성 요청\"}}]}",
+        "simple": false,
+        "options": {}
+      },
+      "id": "702565f9-dd9e-4fbd-901d-7c3475a932c7",
+      "name": "노션 생성 요청 조회",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 3,
+      "position": [
+        -560,
+        80
+      ],
+      "notesInFlow": true,
+      "notes": "프로젝트 2이면서 생성 요청인 행만 조회합니다."
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cdf3f293-0f6c-4caf-9886-841afc1a3ae4",
+              "name": "page_id",
+              "type": "string",
+              "value": "={{ $json.id }}"
+            },
+            {
+              "id": "a833790e-872c-4347-8010-ab554246436c",
+              "name": "platform",
+              "type": "string",
+              "value": "={{ $json.properties[\"플랫폼\"].select.name }}"
+            },
+            {
+              "id": "93e28049-e20a-4c7c-8771-9e0353f5d981",
+              "name": "description",
+              "type": "string",
+              "value": "={{ $json.properties[\"콘텐츠 설명·대본\"].rich_text.map(t => t.plain_text ?? t.text?.content ?? \"\").join(\"\") }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "d0f2aaa0-7422-4d36-8727-38081e1ecde2",
+      "name": "콘텐츠 입력 정리",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -304,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "fc742576-7461-4229-80d4-67fbcd05c682",
+                    "leftValue": "={{ $json.platform }}",
+                    "rightValue": "유튜브",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "유튜브"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c7b3c60e-533c-4fd6-868a-8d104076c79b",
+                    "leftValue": "={{ $json.platform }}",
+                    "rightValue": "인스타그램",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "인스타그램"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "252f4eac-d139-4c3b-a3dd-49c1e4b367f2",
+      "name": "플랫폼 분기",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -64,
+        80
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-flash-lite-latest",
+          "mode": "list",
+          "cachedResultName": "models/gemini-flash-lite-latest"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=다음 콘텐츠로 유튜브 쇼츠 업로드 문구를 작성해.\n제목은 핵심이 드러나게 35자 이내, 설명은 2문장 이내.\n과장하거나 없는 사실을 만들지 마.\n해시태그는 #Shorts 포함 3개.\n아래 JSON만 출력하고 모든 값은 문자열로 작성해.\n{\"title\":\"\",\"body\":\"\",\"hashtags\":\"\"}\n\n콘텐츠: {{ $json.description }}"
+            }
+          ]
+        },
+        "simplify": false,
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "4bb205a2-6b86-4d14-8557-893567d2ae96",
+      "name": "유튜브 Gemini",
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        -96
+      ],
+      "notesInFlow": true,
+      "notes": "플랫폼별 프롬프트로 문구를 생성합니다."
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ JSON.parse($json.candidates[0].content.parts.filter(p => !p.thought && typeof p.text === 'string').map(p => p.text).join('').trim().replace(/^```(?:json)?\\s*/i, '').replace(/\\s*```$/, '')) }}",
+        "options": {}
+      },
+      "id": "8ec5aa15-cb76-4f39-8d98-7fc309b1f679",
+      "name": "유튜브 JSON 분석",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        464,
+        -96
+      ],
+      "notes": "Gemini의 코드 블록을 제거하고 JSON을 분석합니다. 잘못된 JSON은 저장 전에 실행을 중단합니다."
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('콘텐츠 입력 정리').item.json.page_id }}"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "생성 제목|rich_text",
+              "type": "rich_text",
+              "textContent": "={{ $json.title }}"
+            },
+            {
+              "key": "생성 본문|rich_text",
+              "type": "rich_text",
+              "textContent": "={{ $json.body }}"
+            },
+            {
+              "key": "해시태그|rich_text",
+              "type": "rich_text",
+              "textContent": "={{ $json.hashtags }}"
+            },
+            {
+              "key": "상태|select",
+              "type": "select",
+              "selectValue": "생성 완료"
+            },
+            {
+              "key": "생성 시각|date",
+              "type": "date",
+              "date": "={{ $now.toISO() }}",
+              "timezone": "Asia/Seoul"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "8160873e-66a7-4a8b-974c-8dcd5525d453",
+      "name": "유튜브 노션 저장",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 3,
+      "position": [
+        720,
+        -96
+      ],
+      "notes": "조회한 원래 콘텐츠 행을 업데이트합니다. 조회 노드와 동일한 노션 인증을 선택하세요."
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-flash-lite-latest",
+          "mode": "list",
+          "cachedResultName": "models/gemini-flash-lite-latest"
+        },
+        "messages": {
+          "values": [
+            {
+              "content": "=다음 콘텐츠로 인스타 릴스 캡션을 작성해.\n첫 문장은 관심을 끌게, 전체는 친근한 말투로 3문장 이내.\n과장하거나 없는 사실을 만들지 마.\n관련 해시태그는 3개.\n아래 JSON만 출력하고 title은 빈 문자열로 둬.\n{\"title\":\"\",\"body\":\"\",\"hashtags\":\"\"}\n\n콘텐츠: {{ $json.description }}"
+            }
+          ]
+        },
+        "simplify": false,
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "38afc2d9-aa52-42f1-ab99-4baaab5313c5",
+      "name": "인스타 Gemini",
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1.2,
+      "position": [
+        208,
+        288
+      ],
+      "notesInFlow": true,
+      "notes": "플랫폼별 프롬프트로 문구를 생성합니다."
+    },
+    {
+      "parameters": {
+        "mode": "raw",
+        "jsonOutput": "={{ JSON.parse($json.candidates[0].content.parts.filter(p => !p.thought && typeof p.text === 'string').map(p => p.text).join('').trim().replace(/^```(?:json)?\\s*/i, '').replace(/\\s*```$/, '')) }}",
+        "options": {}
+      },
+      "id": "03c43284-0faa-477c-b2b3-b5b01d53aa69",
+      "name": "인스타 JSON 분석",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        464,
+        288
+      ],
+      "notes": "Gemini의 코드 블록을 제거하고 JSON을 분석합니다. 잘못된 JSON은 저장 전에 실행을 중단합니다."
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "update",
+        "pageId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "={{ $('콘텐츠 입력 정리').item.json.page_id }}"
+        },
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "생성 제목|rich_text",
+              "type": "rich_text",
+              "textContent": "={{ $json.title }}"
+            },
+            {
+              "key": "생성 본문|rich_text",
+              "type": "rich_text",
+              "textContent": "={{ $json.body }}"
+            },
+            {
+              "key": "해시태그|rich_text",
+              "type": "rich_text",
+              "textContent": "={{ $json.hashtags }}"
+            },
+            {
+              "key": "상태|select",
+              "type": "select",
+              "selectValue": "생성 완료"
+            },
+            {
+              "key": "생성 시각|date",
+              "type": "date",
+              "date": "={{ $now.toISO() }}",
+              "timezone": "Asia/Seoul"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "998393cd-1940-4336-9a2a-14c78c449a94",
+      "name": "인스타 노션 저장",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 3,
+      "position": [
+        720,
+        288
+      ],
+      "notes": "조회한 원래 콘텐츠 행을 업데이트합니다. 조회 노드와 동일한 노션 인증을 선택하세요."
+    },
+    {
+      "parameters": {
+        "content": "## 프로젝트 2 · 콘텐츠 문구 자동 생성\n1분마다 프로젝트 2의 생성 요청을 조회합니다.\n유튜브/인스타 분기 → Gemini → JSON 분석 → 원래 노션 행 저장.\n입력: 플랫폼, 콘텐츠 설명·대본, 작업 구분, 상태.\n파일은 Drive에 보관하고 링크만 노션에서 관리합니다.\n알림·재시도·실제 SNS 게시는 구현하지 않습니다.\n컴퓨터와 Docker가 켜져 있어야 자동 실행됩니다.",
+        "height": 330,
+        "width": 820
+      },
+      "id": "6e6485fe-d15c-46ca-82da-3a2b5a0bc0a1",
+      "name": "시작 안내",
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -1152,
+        -1056
+      ]
+    }
+  ],
+  "connections": {
+    "플랫폼 분기": {
+      "main": [
+        [
+          {
+            "node": "유튜브 Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "인스타 Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "유튜브 Gemini": {
+      "main": [
+        [
+          {
+            "node": "유튜브 JSON 분석",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "유튜브 JSON 분석": {
+      "main": [
+        [
+          {
+            "node": "유튜브 노션 저장",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "인스타 Gemini": {
+      "main": [
+        [
+          {
+            "node": "인스타 JSON 분석",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "인스타 JSON 분석": {
+      "main": [
+        [
+          {
+            "node": "인스타 노션 저장",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "노션 생성 요청 조회": {
+      "main": [
+        [
+          {
+            "node": "콘텐츠 입력 정리",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "콘텐츠 입력 정리": {
+      "main": [
+        [
+          {
+            "node": "플랫폼 분기",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "1분마다 자동 실행": {
+      "main": [
+        [
+          {
+            "node": "노션 생성 요청 조회",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "Asia/Seoul",
+    "binaryMode": "separate"
+  },
+  "pinData": {}
+}
