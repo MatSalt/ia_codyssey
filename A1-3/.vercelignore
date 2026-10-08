@@ -1,0 +1,7 @@
+.venv
+.work
+.env*
+tests
+docs
+node_modules
+*.pdf

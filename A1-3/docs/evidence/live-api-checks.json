@@ -1,0 +1,87 @@
+[
+  {
+    "case": "facts",
+    "source": "On 15 June, Maya visited the library in Seoul. She did not buy a book. The librarian recommended a story about a young traveller, but Maya decided to borrow a book about science instead. She plans to return it in 14 days, although she may need more time.",
+    "seconds": 3.03,
+    "results": [
+      {
+        "level": "A1",
+        "rewritten_text": "On 15 June, Maya went to the library in Seoul. She did not buy a book. The librarian talked about a story. It is about a young traveller. But Maya chose a science book. She wants to bring it back in 14 days. She might need more time.",
+        "changes": [
+          {
+            "original": "visited",
+            "rewritten": "went to",
+            "reason_ko": "A1 수준의 학습자가 이해하기 쉽도록 친숙한 기본 동사 표현으로 나누어 썼습니다."
+          },
+          {
+            "original": "recommended",
+            "rewritten": "talked about",
+            "reason_ko": "추천하다라는 다소 어려운 어휘 대신 이야기해 주었다는 쉬운 표현으로 풀었습니다."
+          }
+        ],
+        "note_ko": "긴 문장을 짧고 단순한 문장 여러 개로 쪼개어 초급 학습자도 쉽게 읽을 수 있도록 구성했습니다."
+      },
+      {
+        "level": "A2",
+        "rewritten_text": "On 15 June, Maya visited the library in Seoul. She did not buy a book. The librarian recommended a story about a young traveller. However, Maya decided to borrow a science book instead. She plans to return it in 14 days, but she may need more time.",
+        "changes": [
+          {
+            "original": "borrow a book about science",
+            "rewritten": "borrow a science book",
+            "reason_ko": "어구 배치를 간결하게 다듬어 A2 수준에서 자연스럽게 읽히도록 했습니다."
+          }
+        ],
+        "note_ko": "기본적인 접속사와 일상 어휘를 사용하여 원문의 흐름을 자연스럽게 유지했습니다."
+      },
+      {
+        "level": "B1",
+        "rewritten_text": "On 15 June, Maya visited the library in Seoul. She did not buy a book. The librarian recommended a story about a young traveller, but Maya decided to borrow a book about science instead. She plans to return it in 14 days, although she may need more time.",
+        "changes": [],
+        "note_ko": "원문 자체가 이미 B1 수준에 적절하므로 의미와 구조를 그대로 유지했습니다."
+      },
+      {
+        "level": "B2",
+        "rewritten_text": "On 15 June, Maya visited the library in Seoul. She did not buy a book. The librarian recommended a story about a young traveller, but Maya decided to borrow a book about science instead. She plans to return it in 14 days, although she may need more time.",
+        "changes": [],
+        "note_ko": "중상급 학습자에게 알맞은 자연스러운 원문의 문장 구조와 어휘를 그대로 보존했습니다."
+      }
+    ]
+  },
+  {
+    "case": "short",
+    "source": "The cat is sleeping.",
+    "seconds": 1.77,
+    "results": [
+      {
+        "level": "A1",
+        "rewritten_text": "The cat is sleeping.",
+        "changes": [],
+        "note_ko": "원문이 이미 매우 단순하므로 A1 수준에 그대로 적합합니다."
+      },
+      {
+        "level": "A2",
+        "rewritten_text": "The cat is sleeping.",
+        "changes": [],
+        "note_ko": "원문의 의미와 형태가 단순하여 수정 없이 그대로 제공됩니다."
+      },
+      {
+        "level": "B1",
+        "rewritten_text": "The cat is sleeping.",
+        "changes": [],
+        "note_ko": "원문 문장이 명확하므로 B1 단계에서도 추가적인 변경이 필요 없습니다."
+      },
+      {
+        "level": "B2",
+        "rewritten_text": "The cat is sleeping.",
+        "changes": [],
+        "note_ko": "이미 자연스러운 문장이므로 B2 수준에서도 원문을 유지합니다."
+      }
+    ]
+  },
+  {
+    "case": "no-english",
+    "source": "오늘 도서관에 다녀왔어요.",
+    "error": "NOT_ENGLISH",
+    "status": 422
+  }
+]

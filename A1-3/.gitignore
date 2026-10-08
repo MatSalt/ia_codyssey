@@ -1,0 +1,13 @@
+.env
+.env.*
+.venv/
+__pycache__/
+*.py[cod]
+.vercel/
+.work/
+node_modules/
+.DS_Store
+.vercel
+.env*
+
+!.env.example
