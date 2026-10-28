@@ -1,0 +1,22 @@
+{
+  "path": "data/raw/locations/admin/transit_admin_master_20261027.csv",
+  "source_url": "https://data.seoul.go.kr/dataList/OA-21234/S/1/datasetView.do",
+  "download_url": "https://datafile.seoul.go.kr/bigfile/iot/sheet/csv/download.do",
+  "post_parameters": {
+    "infId": "OA-21234",
+    "srvType": "S",
+    "serviceKind": "1",
+    "ssUserId": "SAMPLE_VIEW"
+  },
+  "bytes": 86815,
+  "sha256": "270ebf13902a90a80547315ef2113e90b79f8bffe110329da18a7d10ab03206b",
+  "encoding": "cp949",
+  "columns": [
+    "행정동_ID",
+    "행정동_명칭",
+    "자치구_명칭",
+    "시도_명칭"
+  ],
+  "rows": 2270,
+  "temporal_scope": "download-time snapshot; historical changes not resolved"
+}

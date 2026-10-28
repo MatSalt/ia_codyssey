@@ -1,0 +1,66 @@
+{
+  "generated_at_utc": "2026-10-28T01:43:53.895827+00:00",
+  "monthly_rows": 4400,
+  "districts": 25,
+  "panel_dongs": 398,
+  "period": "2023-01..2026-08",
+  "boundary_sha256": "47e973d34443b307fb02a0116a54fb13b6a67bd0730d242dd23707beb99e32e2",
+  "table_sha256": "a86b395e1208d362f17aee44e740824c9fb825f861aa7f0bbc6b733d0b9d3fbd",
+  "html_sha256": "3c9854869619e962d4de765c4dd782162a3554a914335c4082c8bdca2ee6c6e9",
+  "preview_sha256": "c03cdb6f1909e7251e474d98c29dcdcfde5e617917bbc16812300816e3c36724",
+  "method": "District-day sums of complete fixed-panel dong windows; equal weekday/month weighting, at least 2 days per stratum.",
+  "missing_policy": "Any missing panel dong/hour invalidates district-day window; unavailable periods grey, never zero-filled.",
+  "meaning": "Destination/origin district of inter-dong journeys within the fixed Seoul panel; includes journeys inside the same district. Time attribution unconfirmed.",
+  "independent_month_checks": [
+    {
+      "month": "202301",
+      "district": "성동구",
+      "scope": "internal_in",
+      "window": "weekend_day",
+      "value": 8569.25,
+      "independent_daily_sum_equal": true
+    },
+    {
+      "month": "202408",
+      "district": "마포구",
+      "scope": "internal_out",
+      "window": "weekday_morning",
+      "value": 21799.756666666664,
+      "independent_daily_sum_equal": true
+    },
+    {
+      "month": "202508",
+      "district": "중구",
+      "scope": "internal_in",
+      "window": "weekend_day",
+      "value": 18312.116666666665,
+      "independent_daily_sum_equal": true
+    },
+    {
+      "month": "202608",
+      "district": "강남구",
+      "scope": "internal_out",
+      "window": "weekend_day",
+      "value": 24606.485416666666,
+      "independent_daily_sum_equal": true
+    }
+  ],
+  "javascript_checks": {
+    "passed": true,
+    "type": "JavaScript runtime with DOM test doubles (not browser E2E)",
+    "cases": [
+      "25 districts",
+      "annual numeric check",
+      "2026 JanAug alignment",
+      "latest same month",
+      "outbound",
+      "missing month grey/null",
+      "identical period zero",
+      "weekday morning"
+    ],
+    "default_seongdong_change": 15.402733200056872
+  },
+  "browser_e2e": "Not performed: browser policy blocked file:// navigation.",
+  "original_report_unchanged": true,
+  "readme_links_valid": true
+}

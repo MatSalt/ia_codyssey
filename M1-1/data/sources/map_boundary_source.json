@@ -1,0 +1,13 @@
+{
+  "source_url": "https://data.seoul.go.kr/opendata/seoulStay/grid_viewer.html",
+  "source_html_bytes": 851471,
+  "source_html_sha256": "3eef4ea4ff58a1ad1f66181e03b97fafa08ceefa33904cc0888ead424cd032b6",
+  "extraction": "공개 HTML의 const SIGUNGU에 있는 JSON만 파싱. 스크립트를 실행하지 않음.",
+  "boundary_date": "2025-06-30",
+  "feature_count": 25,
+  "coordinate_convention": "GeoJSON longitude,latitude, WGS84 범위 검사 및 알려진 지점 검사로 검증",
+  "derived_file": "seoul_districts_20250630.geojson",
+  "derived_sha256": "47e973d34443b307fb02a0116a54fb13b6a67bd0730d242dd23707beb99e32e2",
+  "limitations": "공식 격자 선택기 시각화용 경계. 법적 측량 경계·위치 정확도를 보증하지 않으며 경계선·중복 배정은 미확정으로 유지. 기준일 이후 변경 적합성 별도 검토.",
+  "attribution": "서울특별시 서울 열린데이터광장 서울 체류인구 격자 선택기"
+}

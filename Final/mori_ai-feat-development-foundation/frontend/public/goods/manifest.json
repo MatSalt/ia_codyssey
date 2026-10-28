@@ -1,0 +1,130 @@
+{
+  "sourceCommit": "fb5a3418d2191734d10fcdcb546a77298b57a9f0",
+  "assets": [
+    {
+      "source": "public/examples/products/photo.webp",
+      "file": "examples/keyring/photo.webp",
+      "sha256": "edc8c317f4e252819f21877a85ab5e8b31bb753ed9b9473ba1d07e4fc4d10075"
+    },
+    {
+      "source": "public/examples/products/photo-card.webp",
+      "file": "examples/keyring/photo-card.webp",
+      "sha256": "c8d77dc0f0d0c064ab0888c9c40be9e307b386d4902454e76e734d4871bdb32d"
+    },
+    {
+      "source": "public/examples/products/illustration.webp",
+      "file": "examples/keyring/illustration.webp",
+      "sha256": "b8c73219add88e776ae1bf19542b0769b67ed8292dcdca265d9f1cc52d8d8df3"
+    },
+    {
+      "source": "public/examples/products/illustration-card.webp",
+      "file": "examples/keyring/illustration-card.webp",
+      "sha256": "8acd54d10d5e0a6601f1cb219cb273676433cad6ac48a9b820c52fe75ed4b982"
+    },
+    {
+      "source": "public/examples/products/cutout.webp",
+      "file": "examples/keyring/cutout.webp",
+      "sha256": "8f1d53e19e6d78b3a575e199bf4d36a01a02ba456a9dc9e75fa86947eba9ab4e"
+    },
+    {
+      "source": "public/examples/products/cutout-card.webp",
+      "file": "examples/keyring/cutout-card.webp",
+      "sha256": "158a7c2c03365333f1e363721f3566662a793189350696a49bbec21aa025347f"
+    },
+    {
+      "source": "public/examples/products/badge.webp",
+      "file": "examples/keyring/badge.webp",
+      "sha256": "84890b832f6ef7448cf925d9b060cba5c068aab9fb4b53cddd75fbc317b1c2ae"
+    },
+    {
+      "source": "public/examples/products/badge-card.webp",
+      "file": "examples/keyring/badge-card.webp",
+      "sha256": "54d691119b464191fc405b3a38cf3d561ce596981c2d7da2cb57e82b5a85a026"
+    },
+    {
+      "source": "public/examples/products/book.webp",
+      "file": "examples/keyring/book.webp",
+      "sha256": "7fed62cb9945a63fe728bd9e246f05b02b0f5a4ea6124f672330ac12f46c486a"
+    },
+    {
+      "source": "public/examples/products/book-card.webp",
+      "file": "examples/keyring/book-card.webp",
+      "sha256": "35ae3d5fa99e67e28842a29d22e323c18e6fa2dee1fe502d33afa7cf2fc15c58"
+    },
+    {
+      "source": "public/examples/products/free.webp",
+      "file": "examples/keyring/free.webp",
+      "sha256": "c566c3d2273cdafb471b97719684522f03a6f1e7e7ca6c72a69fa880b06c8cfb"
+    },
+    {
+      "source": "public/examples/products/free-card.webp",
+      "file": "examples/keyring/free-card.webp",
+      "sha256": "b706a29b39d1366481999c780c3a9ad296c864fc5ab7ae36ae2c9eb7c096acc7"
+    },
+    {
+      "source": "public/examples/products/magnet/photo.webp",
+      "file": "examples/magnet/photo.webp",
+      "sha256": "cb4b47612d4cd000be5e02a6d990aff70e0e10f78fa1dbd87bd4e7034b879d76"
+    },
+    {
+      "source": "public/examples/products/magnet/photo-card.webp",
+      "file": "examples/magnet/photo-card.webp",
+      "sha256": "1a6ed5adcfc75f7402033fea88180caba9e1044e1af9b3a6deac87208b22177d"
+    },
+    {
+      "source": "public/examples/products/magnet/illustration.webp",
+      "file": "examples/magnet/illustration.webp",
+      "sha256": "0a19174e83ef545e5e639caab013f9b1b5cc8e823a9410d0643b0314ce29c974"
+    },
+    {
+      "source": "public/examples/products/magnet/illustration-card.webp",
+      "file": "examples/magnet/illustration-card.webp",
+      "sha256": "a6141c95befdb68abc3d68303e3a98a3a62e47e35d2fb7185c23a72676f128e8"
+    },
+    {
+      "source": "public/examples/products/magnet/cutout.webp",
+      "file": "examples/magnet/cutout.webp",
+      "sha256": "049f7e73f8f8705958f867d360294030c18861fb841be34389702f57212fbf30"
+    },
+    {
+      "source": "public/examples/products/magnet/cutout-card.webp",
+      "file": "examples/magnet/cutout-card.webp",
+      "sha256": "f3e1df86fda9807b2de476468ca6a2b14da4be600a3d24f7c1b6585fcf7816ef"
+    },
+    {
+      "source": "public/examples/products/magnet/badge.webp",
+      "file": "examples/magnet/badge.webp",
+      "sha256": "d037c8ef502c717fb69e745a5af694b73f3ebc46f1397f22dce154a797a750e4"
+    },
+    {
+      "source": "public/examples/products/magnet/badge-card.webp",
+      "file": "examples/magnet/badge-card.webp",
+      "sha256": "50980b9d7f6833fd3e641350094f3bec4fd6488ad384f1db79214d293a077664"
+    },
+    {
+      "source": "public/examples/products/magnet/book.webp",
+      "file": "examples/magnet/book.webp",
+      "sha256": "8166484415701736ddda0cb6b9eb230851654319ae34ca6df1f0b5feb18f48b2"
+    },
+    {
+      "source": "public/examples/products/magnet/book-card.webp",
+      "file": "examples/magnet/book-card.webp",
+      "sha256": "83e09e94f95e85a51adae136818d1575638c0a635c6bfd3e8a746ffccecfba98"
+    },
+    {
+      "source": "public/examples/products/magnet/free.webp",
+      "file": "examples/magnet/free.webp",
+      "sha256": "95475cc8aecc80a07e7773431cd8ce5800964d536af1effbe0cf672ff46c4559"
+    },
+    {
+      "source": "public/examples/products/magnet/free-card.webp",
+      "file": "examples/magnet/free-card.webp",
+      "sha256": "a2e0086d3478dedc94782c9a2fe68fb1435f58d2e048bac76463bdf3d988eae9"
+    },
+    {
+      "source": "public/mockup/silver-hardware-v1.webp",
+      "file": "mockup/silver-hardware-v1.webp",
+      "sha256": "7cb8d54fc765653c929899eeb13c3a66c663378d33a82a881131ccff3c5bef1d"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+import type {ReactNode} from 'react';
+import {PhotoThumbnail} from '../../components/media/PhotoThumbnail';
+export function ThumbnailStrip({items,activeId,onSelect}:{items:{id:string;label:string;content:ReactNode;dirty:boolean}[];activeId:string;onSelect:(id:string)=>void}){return <nav className="thumbnail-strip" aria-label="검토할 사진 선택">{items.map(item=><PhotoThumbnail key={item.id} label={item.label+(item.dirty?' · 저장하지 않은 변경':'')} selected={item.id===activeId} onSelect={()=>onSelect(item.id)}>{item.content}{item.dirty&&<span className="thumbnail-dirty" aria-hidden="true">●</span>}</PhotoThumbnail>)}</nav>;}

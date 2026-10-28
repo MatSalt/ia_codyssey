@@ -1,0 +1,108 @@
+services:
+  postgres:
+    image: postgres:17-bookworm
+    platform: linux/amd64
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-mori}
+      POSTGRES_DB: ${POSTGRES_DB:-mori}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a dedicated local POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      # The image's init server accepts Unix sockets before final TCP startup.
+      test: ["CMD-SHELL", "pg_isready -h 127.0.0.1 -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  web:
+    image: ${MORI_IMAGE:-mori-ai:dev}
+    platform: linux/amd64
+    build:
+      context: .
+      target: runtime
+    environment: &backend_environment
+      DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-mori}:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-mori}
+      APP_ENV: ${APP_ENV:-production}
+      DEV_AI_ENABLED: ${DEV_AI_ENABLED:-false}
+      AI_REAL_CALLS_ENABLED: ${AI_REAL_CALLS_ENABLED:-false}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      OPENAI_ORG_ID: ${OPENAI_ORG_ID:-}
+      OPENAI_PROJECT_ID: ${OPENAI_PROJECT_ID:-}
+      OPENAI_CAPTION_MODEL: ${OPENAI_CAPTION_MODEL:-gpt-5.4-mini}
+      OPENAI_IMAGE_MODEL: ${OPENAI_IMAGE_MODEL:-gpt-image-2}
+      GOODS_IMAGE_MODEL: ${GOODS_IMAGE_MODEL:-gpt-image-2.5-sunburst}
+      GOODS_GENERATION_LIMIT: ${GOODS_GENERATION_LIMIT:-}
+      AI_VALIDATION_BUDGET_USD: ${AI_VALIDATION_BUDGET_USD:-100}
+      AI_VALIDATION_INITIAL_BUDGET_USD: ${AI_VALIDATION_INITIAL_BUDGET_USD:-5}
+      DEV_AUTH_ENABLED: ${DEV_AUTH_ENABLED:-false}
+      APP_ORIGIN: ${APP_ORIGIN:-http://127.0.0.1:8000}
+      SESSION_COOKIE_ALLOW_INSECURE_LOCAL: ${SESSION_COOKIE_ALLOW_INSECURE_LOCAL:-false}
+      SESSION_TTL_SECONDS: ${SESSION_TTL_SECONDS:-86400}
+      CONSENT_POLICY_VERSION: ${CONSENT_POLICY_VERSION:-media-2026-10-18}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOOGLE_REDIRECT_URI: ${GOOGLE_REDIRECT_URI:-}
+      KAKAO_CLIENT_ID: ${KAKAO_CLIENT_ID:-}
+      KAKAO_CLIENT_SECRET: ${KAKAO_CLIENT_SECRET:-}
+      KAKAO_REDIRECT_URI: ${KAKAO_REDIRECT_URI:-}
+      STORAGE_MODE: ${STORAGE_MODE:-local}
+      STORAGE_ROOT: ${STORAGE_ROOT:-/app/media}
+      R2_BUCKET_NAME: ${R2_BUCKET_NAME:-}
+      R2_ENDPOINT_URL: ${R2_ENDPOINT_URL:-}
+      R2_ACCESS_KEY_ID: ${R2_ACCESS_KEY_ID:-}
+      R2_SECRET_ACCESS_KEY: ${R2_SECRET_ACCESS_KEY:-}
+      R2_REGION: ${R2_REGION:-auto}
+      R2_KEY_PREFIX: ${R2_KEY_PREFIX:-mori-ai/}
+      WORKER_POLL_SECONDS: ${WORKER_POLL_SECONDS:-1}
+      NORMALIZED_WEBP_LOSSLESS: ${NORMALIZED_WEBP_LOSSLESS:-false}
+      NORMALIZED_WEBP_QUALITY: ${NORMALIZED_WEBP_QUALITY:-90}
+      NORMALIZED_MAX_EDGE: ${NORMALIZED_MAX_EDGE:-4096}
+      NORMALIZED_MAX_BYTES: ${NORMALIZED_MAX_BYTES:-20971520}
+      RESULT_WEBP_QUALITY: ${RESULT_WEBP_QUALITY:-90}
+      THUMBNAIL_WEBP_QUALITY: ${THUMBNAIL_WEBP_QUALITY:-80}
+      THUMBNAIL_MAX_EDGE: ${THUMBNAIL_MAX_EDGE:-480}
+    ports:
+      - "127.0.0.1:${WEB_PORT:-8000}:8000"
+    volumes:
+      - media:/app/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2)"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  worker:
+    image: ${MORI_IMAGE:-mori-ai:dev}
+    platform: linux/amd64
+    build:
+      context: .
+      target: runtime
+    command: ["python", "-m", "backend.worker"]
+    environment: *backend_environment
+    volumes:
+      - media:/app/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    stop_grace_period: 15s
+  # One-off local initializer, not an additional persistent product service.
+  migrate:
+    image: ${MORI_IMAGE:-mori-ai:dev}
+    platform: linux/amd64
+    build:
+      context: .
+      target: runtime
+    command: ["python", "-m", "alembic", "-c", "backend/alembic.ini", "upgrade", "head"]
+    environment: *backend_environment
+    depends_on:
+      postgres:
+        condition: service_healthy
+volumes:
+  postgres_data:
+  media:

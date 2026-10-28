@@ -1,0 +1,20 @@
+[
+  {
+    "AllowedOrigins": [
+      "http://127.0.0.1:18183"
+    ],
+    "AllowedMethods": [
+      "GET",
+      "HEAD",
+      "PUT"
+    ],
+    "AllowedHeaders": [
+      "Content-Type",
+      "If-None-Match"
+    ],
+    "ExposeHeaders": [
+      "ETag"
+    ],
+    "MaxAgeSeconds": 3600
+  }
+]

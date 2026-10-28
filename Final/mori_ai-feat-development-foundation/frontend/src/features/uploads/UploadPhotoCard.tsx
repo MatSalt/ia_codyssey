@@ -1,0 +1,2 @@
+import type {ReactNode} from 'react';
+export function UploadPhotoCard({position,photo,status,actions}:{position:number;photo:ReactNode;status:ReactNode;actions:ReactNode}) {return <li className="upload-photo-card"><div className="upload-photo-image">{photo}<span className="photo-number" aria-label={`${position}번째 사진`}>{position}</span></div><div className="upload-photo-status" role="status">{status}</div><details className="photo-options"><summary aria-label={`${position}번째 사진 순서 변경 또는 삭제`}>사진 관리 ···</summary><div className="page-actions">{actions}</div></details></li>;}

@@ -1,0 +1,120 @@
+{
+  "environment": {
+    "docker_arch": "aarch64",
+    "runtime_arch": "x86_64",
+    "docker_cpus": 8,
+    "docker_memory_bytes": 8218251264
+  },
+  "input": {
+    "width": 4032,
+    "height": 3024,
+    "fixture": "seeded grayscale synthetic RGB; random seed 20261016",
+    "samples_per_format_mode": 1
+  },
+  "r2": [
+    {
+      "ai_input_gets": 3,
+      "ai_input_seconds": 5.309600794000289,
+      "format": "JPEG",
+      "input_seconds": 3.5452782520005712,
+      "mode": "legacy",
+      "normalize_seconds": 5.162139793999813,
+      "normalized_bytes": 9401522,
+      "output_sha256": "7e9672daf51f0745c6ec237a55459ea77b353bc79b5cb50fd911d1f3b0768e8c",
+      "persist_seconds": 8.904867254001147,
+      "recheck_seconds": 1.1879176679994998,
+      "source_bytes": 5770131,
+      "source_gets": 3,
+      "validation_seconds": 18.80022609200023
+    },
+    {
+      "ai_input_gets": 1,
+      "ai_input_seconds": 5.453923836001195,
+      "format": "JPEG",
+      "input_seconds": 1.817173626001022,
+      "mode": "snapshot",
+      "normalize_seconds": 5.670112044999769,
+      "normalized_bytes": 9401522,
+      "output_sha256": "7e9672daf51f0745c6ec237a55459ea77b353bc79b5cb50fd911d1f3b0768e8c",
+      "persist_seconds": 16.446666215999358,
+      "recheck_seconds": 4.666000677389093e-06,
+      "source_bytes": 5770131,
+      "source_gets": 1,
+      "validation_seconds": 23.93397463600013
+    },
+    {
+      "ai_input_gets": 1,
+      "ai_input_seconds": 3.6073957519984106,
+      "format": "PNG",
+      "input_seconds": 10.088818129999709,
+      "mode": "snapshot",
+      "normalize_seconds": 5.31431141900066,
+      "normalized_bytes": 9168282,
+      "output_sha256": "dcd5f8c7ef6361970f41f0845e8f2a9a18a5e6f0a52133aa89319889dd25755b",
+      "persist_seconds": 9.824739712001247,
+      "recheck_seconds": 1.0829990060301498e-06,
+      "source_bytes": 18110853,
+      "source_gets": 1,
+      "validation_seconds": 25.227885012000115
+    },
+    {
+      "ai_input_gets": 3,
+      "ai_input_seconds": 10.029969004999657,
+      "format": "PNG",
+      "input_seconds": 11.748646797001129,
+      "mode": "legacy",
+      "normalize_seconds": 5.2057748770002945,
+      "normalized_bytes": 9168282,
+      "output_sha256": "dcd5f8c7ef6361970f41f0845e8f2a9a18a5e6f0a52133aa89319889dd25755b",
+      "persist_seconds": 10.159968837000633,
+      "recheck_seconds": 4.832574336000107,
+      "source_bytes": 18110853,
+      "source_gets": 3,
+      "validation_seconds": 31.946988847001194
+    },
+    {
+      "ai_input_gets": 3,
+      "ai_input_seconds": 6.811336210999798,
+      "format": "HEIF",
+      "input_seconds": 4.845888043999366,
+      "mode": "legacy",
+      "normalize_seconds": 6.182381127999179,
+      "normalized_bytes": 9169148,
+      "output_sha256": "88ad9bfece211134511428ddadeb6cb654bfb0c0eda58b3d3ad1fbf157583995",
+      "persist_seconds": 9.985511753999162,
+      "recheck_seconds": 5.100021961001403,
+      "source_bytes": 10935488,
+      "source_gets": 3,
+      "validation_seconds": 26.113815843998964
+    },
+    {
+      "ai_input_gets": 1,
+      "ai_input_seconds": 1.793181168000956,
+      "format": "HEIF",
+      "input_seconds": 1.873653792999903,
+      "mode": "snapshot",
+      "normalize_seconds": 6.284021127999949,
+      "normalized_bytes": 9169148,
+      "output_sha256": "88ad9bfece211134511428ddadeb6cb654bfb0c0eda58b3d3ad1fbf157583995",
+      "persist_seconds": 9.332601295998757,
+      "recheck_seconds": 8.749993867240846e-07,
+      "source_bytes": 10935488,
+      "source_gets": 1,
+      "validation_seconds": 17.490285007999773
+    },
+    {
+      "cleanup": "completed",
+      "ai_calls": 0,
+      "database_writes": 0
+    }
+  ],
+  "controlled_provider": {
+    "photos": 6,
+    "image_delay_seconds": 3,
+    "caption_delay_seconds": 1.5,
+    "serial_seconds": 22.861,
+    "parallel_seconds": 7.991,
+    "calls_each": 9,
+    "real_ai_calls": 0
+  }
+}

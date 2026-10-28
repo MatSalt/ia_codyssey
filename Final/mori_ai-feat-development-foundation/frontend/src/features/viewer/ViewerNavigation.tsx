@@ -1,0 +1,2 @@
+import {IconButton} from '../../components/ui/IconButton';
+export function ViewerNavigation({index,total,onPrevious,onNext}:{index:number;total:number;onPrevious:()=>void;onNext:()=>void}){return <nav className="viewer-navigation" aria-label="페이지 이동"><IconButton label="이전 페이지" disabled={index<=0} onClick={onPrevious}>‹</IconButton><span role="status" aria-live="polite" aria-atomic="true">{index+1} / {total}</span><IconButton label="다음 페이지" disabled={index>=total-1} onClick={onNext}>›</IconButton></nav>;}

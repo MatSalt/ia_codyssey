@@ -1,0 +1,19 @@
+import {ProductScreensPreview} from './ProductScreensPreview';
+import {useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import {LoginView} from '../features/auth/LoginView';
+import {OAuthLoginOptions} from '../features/auth/AuthGate';
+import {GlassButton} from '../components/ui/GlassButton';
+import {IconButton} from '../components/ui/IconButton';
+import {GlassPanel} from '../components/ui/GlassPanel';
+import {ScreenHeader} from '../components/layout/ScreenHeader';
+import {BottomActionBar} from '../components/layout/BottomActionBar';
+import {PhotoFrame} from '../components/media/PhotoFrame';
+import {PhotoThumbnail} from '../components/media/PhotoThumbnail';
+import '../styles.css';
+import './components-preview.css';
+function ComponentsPreview(){
+ const [width,setWidth]=useState(426);const [overlay,setOverlay]=useState(0);const [selected,setSelected]=useState(0);const [message,setMessage]=useState('');const [tab,setTab]=useState('login');
+ return <div className="component-review"><header><h1>mori · 화면 / 공통 컴포넌트 검토</h1><p>제품과 같은 컴포넌트 · 사진은 시안 영역을 표시한 검토용 소재 · 실제 로그인 요청 없음</p><div className="review-tools"><label>화면 <select value={tab} onChange={e=>setTab(e.target.value)}><option value="login">로그인</option><option value="components">공통 부품</option>{['bookshelf','upload','generation','review','viewer'].map((id,i)=><option value={id} key={id}>{['책장','사진 선택','생성 중','글귀 검토','감상'][i]}</option>)}</select></label><label>너비 <select value={width} onChange={e=>setWidth(Number(e.target.value))}>{[320,390,426,430,1064].map(n=><option key={n}>{n}</option>)}</select></label><label>원본 겹치기 <input aria-label="원본 겹치기" type="range" min="0" max="1" step="0.1" value={overlay} onChange={e=>setOverlay(Number(e.target.value))}/></label></div><p role="status">{message || '아래 버튼은 이 화면 안에서만 동작합니다.'}</p></header><div className="comparison-columns"><div><h2>구현 · OS 영역 제외</h2><div className="component-viewport" style={{width}}><div className="component-preview-body" onClick={e=>{if((e.target as HTMLElement).closest('a[href]')){e.preventDefault();setMessage('디자인 검토용 버튼입니다. 실제 인증으로 이동하지 않았습니다.');}}}>{tab==='login'?<LoginView hero={<div className="concept-hero" role="img" aria-label="바다를 바라보는 사람 · 시안 사진"/>} actions={<OAuthLoginOptions providers={['google','kakao']} pending={false} failed={false} retry={()=>{}} returnTo="/albums"/>}/>:tab!=='components'?<ProductScreensPreview key={tab} screen={tab}/>:<div className="component-gallery"><ScreenHeader title="공통 컴포넌트" subtitle="사진과 한 문장" leading={<IconButton label="뒤로가기" onClick={()=>setMessage('뒤로가기 선택')}>‹</IconButton>}/><GlassPanel><h2>버튼 상태</h2><GlassButton onClick={()=>setMessage('주 버튼 선택')}>사진첩 만들기</GlassButton><GlassButton variant="secondary">보조 동작</GlassButton><GlassButton disabled>처리 중…</GlassButton><GlassButton variant="danger">삭제</GlassButton><GlassButton>여러 줄로 표시되는 긴 한글 버튼 문구를 확인합니다</GlassButton></GlassPanel><PhotoFrame ratio="square"><span>사진 전체 표시 영역</span></PhotoFrame><div className="thumbnail-demo">{[0,1,2].map(n=><PhotoThumbnail key={n} label={`${n+1}번째 사진`} selected={selected===n} onSelect={()=>setSelected(n)}><span>{n+1}</span></PhotoThumbnail>)}</div><BottomActionBar><GlassButton onClick={()=>setMessage('하단 동작 선택')}>계속하기</GlassButton></BottomActionBar></div>}</div>{tab==='login'&&<div className="reference-overlay" aria-hidden="true" style={{opacity:overlay}}/>}</div></div><div className="reference-column"><h2>사용자 시안 · OS 영역 제외</h2><div className="reference-crop" style={{width:Math.min(width,426),backgroundImage:`url(/design-preview/${({bookshelf:'bookshelf-reference',upload:'03-photo-upload',generation:'04-generation-progress',review:'05-caption-review',viewer:'06-viewer-bgm'} as Record<string,string>)[tab]??'01-login'}.png)`}}/></div></div></div>;
+}
+createRoot(document.getElementById('root')!).render(<ComponentsPreview/>);

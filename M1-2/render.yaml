@@ -1,0 +1,22 @@
+# Blueprint Path in Render: M1-2/render.yaml (Git root: codyssey)
+services:
+  - type: web
+    name: story-analytics-assistant-api
+    runtime: python
+    rootDir: M1-2/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port "$PORT"
+    healthCheckPath: /docs
+    envVars:
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: FIREBASE_PROJECT_ID
+        value: story-analytics-assistant
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_BASE_URL
+        value: https://copa.codyssey.kr/v1
+      - key: OPENAI_MODEL
+        value: gpt-5-mini

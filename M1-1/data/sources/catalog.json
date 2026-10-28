@@ -1,0 +1,621 @@
+{
+  "inventory_updated_at": "2026-10-27T09:07:39.956962+00:00",
+  "scope": "current_transit_od_analysis",
+  "raw_content_modified": false,
+  "files": [
+    {
+      "path": "data/raw/calendar/calendar_data_2023.html",
+      "bytes": 79051,
+      "sha256": "833e1ad00f94dedb24bd70482af578b7866047d692833b3e5dc68f57a6ca887b",
+      "role": "raw",
+      "provenance_record": "data/metadata/reference_sources.json",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2023",
+      "recorded_hash_match": true,
+      "source_evidence_note": "Original source URL retained; holiday supplements are documented in outputs/od_validation/calendar_sources.json."
+    },
+    {
+      "path": "data/raw/calendar/calendar_data_2024.html",
+      "bytes": 80762,
+      "sha256": "70cb9bef3004d54defc91a518dfca4ce6dc2659fdea296f1a82c5af11c7bcb0b",
+      "role": "raw",
+      "provenance_record": "data/metadata/reference_sources.json",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2024",
+      "recorded_hash_match": true,
+      "source_evidence_note": "Original source URL retained; holiday supplements are documented in outputs/od_validation/calendar_sources.json."
+    },
+    {
+      "path": "data/raw/calendar/calendar_data_2025.html",
+      "bytes": 81709,
+      "sha256": "746652a37681c7ef5e178ff712e91a3893064ac60013c36cdffedbb3f525afcc",
+      "role": "raw",
+      "provenance_record": "data/metadata/reference_sources.json",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2025",
+      "recorded_hash_match": true,
+      "source_evidence_note": "Original source URL retained; holiday supplements are documented in outputs/od_validation/calendar_sources.json."
+    },
+    {
+      "path": "data/raw/calendar/calendar_data_2026.html",
+      "bytes": 81743,
+      "sha256": "a3d8f46a1aeb42c2c60bdf3a17ae7b399de3ff4e519d9396f851406f291856de",
+      "role": "raw",
+      "provenance_record": "data/metadata/reference_sources.json",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2026",
+      "recorded_hash_match": true,
+      "source_evidence_note": "Original source URL retained; holiday supplements are documented in outputs/od_validation/calendar_sources.json."
+    },
+    {
+      "path": "data/raw/locations/admin/admin_codes.zip",
+      "bytes": 2047792,
+      "sha256": "69e8c5dad71dffbc6d0d9be8f9ad607e3d02e72a2577cbaf1b9ba795518226e4",
+      "role": "raw",
+      "provenance_record": "data/metadata/reference_sources.json",
+      "source_url": "https://data.seoul.go.kr/dataVisual/seoul/capitalRegionLivingMigration.do",
+      "recorded_hash_match": true
+    },
+    {
+      "path": "data/raw/locations/admin/transit_admin_master_20261027.csv",
+      "bytes": 86815,
+      "sha256": "270ebf13902a90a80547315ef2113e90b79f8bffe110329da18a7d10ab03206b",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21234/S/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/admin_master.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202301.zip",
+      "bytes": 132310315,
+      "sha256": "5ae7b366b0b91baa93708160d8a75ec15c4ffab99f83ff7a5b522b2236ead147",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202301.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202302.zip",
+      "bytes": 93119851,
+      "sha256": "bcf2c3617d273bab6bcaffddd5ef58410e3acc3e618537b5675925965b194ff1",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202302.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202303.zip",
+      "bytes": 142766560,
+      "sha256": "83267d09d635f3febce7b29519ad58d7f9bdef99ebd6985eb5f41d0854bcb4ff",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202303.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202304.zip",
+      "bytes": 101551923,
+      "sha256": "2c20a1e65b471617594016f11dcf73a87c76f5056388e9c7e633826e969155a4",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202304.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202305.zip",
+      "bytes": 141608760,
+      "sha256": "1f1e442fba94c38a28ad80c6d663ac97a4228e94b77286feb33181e652dcef9a",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202305.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202306.zip",
+      "bytes": 102358142,
+      "sha256": "94b4da4f2203f3bc50866e5a3d2383b57246c300cf8adcd6c0145217a99fbc62",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202306.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202307.zip",
+      "bytes": 102894407,
+      "sha256": "732b4a260056dc9147192d0aeb372307540d04cb2ac808273cfe96fce88c1644",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202307.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202308.zip",
+      "bytes": 102208961,
+      "sha256": "117336239836d2e198eb872866225641c57c709836d20cb1a9376964d80c0b3a",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202308.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202309.zip",
+      "bytes": 135394935,
+      "sha256": "91af7544b6931579ac314f59637131feb558db54a732210a7ebf3f0e111e5072",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202309.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202310.zip",
+      "bytes": 140812947,
+      "sha256": "2346ba55542b7e6d7336df9e2dfd8ee08cced91f07ac84226f91ed6c4d707ba0",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202310.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202311.zip",
+      "bytes": 138857022,
+      "sha256": "6179c8b94e0bf843da418b94c639383a5196d7cc30d3ff193d519d8c261f5b61",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202311.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2023/tpss_emd_odh_202312.zip",
+      "bytes": 104181894,
+      "sha256": "177da5451bdf866f023a85f20902eb3094e2fe0ae7975de169df83bbc231fd3e",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202312.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202401.zip",
+      "bytes": 136694539,
+      "sha256": "e5947652a453abff70c818d6591bfc61e785c4eacb69f3fcd5cc078b1391db73",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202401.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202402.zip",
+      "bytes": 119578866,
+      "sha256": "d64d04140ad056890d68ca515c77e6e4a0b2f6994afe2c6b3c0574851305cf38",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202402.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202403.zip",
+      "bytes": 142928728,
+      "sha256": "113b7c07b2d097b35d88e8c2567cef5c44754986cbbc586ff4ea37e970f65e7f",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202403.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202404.zip",
+      "bytes": 141477240,
+      "sha256": "700285b330fac3d44d6b9ad288acec2a1349605f2756c0cdf0de9d98821133b1",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202404.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202405.zip",
+      "bytes": 141106811,
+      "sha256": "a12e60f4e8ce6af02ccddfb028cc3dcbfedcfdb6ffa146119f6843bab970a4ff",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202405.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202406.zip",
+      "bytes": 135168127,
+      "sha256": "b2909ab65737a20df90aceda291a00d3ec3a1f21fd223f814dfd23fec1a6f668",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202406.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202407.zip",
+      "bytes": 136700863,
+      "sha256": "7b22b0b103ae1b31632349666c1894a9c05c6c2021985502ca3d1251d6a9e7c7",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202407.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202408.zip",
+      "bytes": 137736459,
+      "sha256": "d2d641dda3b5a3bd8a0dc622669f6a5bd85cd1cb33032d5f809d3fd6e751ef57",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202408.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202409.zip",
+      "bytes": 118557847,
+      "sha256": "e7fd35433deea3e08850a25c676f2eec0c8fa4270505a2f7b137b89fb1993230",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202409.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202410.zip",
+      "bytes": 149523872,
+      "sha256": "1d1e38f42b021d4d6ffcfc19953258100867ad19e4239261e1153b59d1364cdf",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202410.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202411.zip",
+      "bytes": 144514730,
+      "sha256": "6afc7eda2f76546acddd98a95e176e6bc8841701e7e6e756e21a13ef27660d55",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202411.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2024/tpss_emd_odh_202412.zip",
+      "bytes": 137258871,
+      "sha256": "7dd06f4c04289ff60e67d2f1840901a0972a13e79b05e1c444b52ec7ad5215a5",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202412.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202501.zip",
+      "bytes": 96125500,
+      "sha256": "f8ac08a17e3071086711418033c9e4e3954a9d94fe7fc083eef61142e896ca45",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202501.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202502.zip",
+      "bytes": 113139230,
+      "sha256": "e2181332c0f90bd8f549b73a976a207ca49e82766779728d287d286622e98d50",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202502.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202503.zip",
+      "bytes": 142932928,
+      "sha256": "026d274d4a853e38500308dffac005edfe5d379a3b56261f37e1cd52f517ff20",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202503.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202504.zip",
+      "bytes": 146235920,
+      "sha256": "a4bf9f3f8e35c9cfb685c92b1ccc93045a44fb7f8737c4100d50a09de7288dab",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202504.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202505.zip",
+      "bytes": 148187525,
+      "sha256": "e4b0f63ba993a47e36e560c25444c76a005771fe1d9f920056e162d77b477b77",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202505.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202506.zip",
+      "bytes": 137979162,
+      "sha256": "7b1a09220d53f91f5a259dad6551dbcc1080fa52f5a72381978cb075f2eebcb9",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202506.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202507.zip",
+      "bytes": 130014913,
+      "sha256": "68036d3d1ca5afd5f603fb0aa8e8de0031673a7ec5861484f5788a35ee872e8d",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202507.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202508.zip",
+      "bytes": 101126930,
+      "sha256": "14df8d1574ef1c0d323651442a4c90749f89c395aabfc18d4b6704a5856fdb71",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202508.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202509.zip",
+      "bytes": 119429220,
+      "sha256": "f32fabecd678b24c4aafdcae12c0280608e56d5f507a76b67004b15210d0b524",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202509.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202510.zip",
+      "bytes": 146677912,
+      "sha256": "99adbea36fd0d2ab86042ecda6a790c8690f5834ffa519eea9a228255f993d91",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202510.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202511.zip",
+      "bytes": 143422901,
+      "sha256": "a2598e5a792216734fb10e42baa94390e6ac0ff0399017cd4caed1da0577573f",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202511.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2025/tpss_emd_odh_202512.zip",
+      "bytes": 120010654,
+      "sha256": "1aaf375600e89d1aee92f0967c3a44b30a714ae1cf502c69f719d7081850d2ee",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202512.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202601.zip",
+      "bytes": 125739895,
+      "sha256": "2020d0deeb734cf9972aa04030e9e2b59c8280499459ca16b8f39c03320b6d10",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202601.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202602.zip",
+      "bytes": 127165625,
+      "sha256": "940372a4ad3694151c0323cbbe9134e1c9c5b18ec4322f1fa1caf41f5f1f5f95",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202602.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202603.zip",
+      "bytes": 148462082,
+      "sha256": "1875dca2372a60ff1bd692033747060054460663b22e501abf29c20a8a88d3ee",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202603.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202604.zip",
+      "bytes": 124058290,
+      "sha256": "c765f8cbdfe0834f91fab42a4c83ff6753fd92dedc53ad66b186409c33d7d52b",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202604.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202605.zip",
+      "bytes": 139533031,
+      "sha256": "e3581334fbda34ede2df9bba9dc88a3e1c1e31ad6b7359c2fb4ed2ab4d5d214e",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202605.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202606.zip",
+      "bytes": 136692005,
+      "sha256": "ce77aec5a3e40684617e6c8844c60f49c98a43e70854da266b68f5a16e434ccd",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202606.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202607.zip",
+      "bytes": 135085384,
+      "sha256": "d47ef89010d8bbead5cfcbf2f7592c0e2e6346f4f0d6e81b2966d77caf44d682",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202607.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202608.zip",
+      "bytes": 130134305,
+      "sha256": "4b9186932ee6e375428578dba660742eaeceb49871097c44e9eeabd2400ed4af",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202608.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_202609.zip",
+      "bytes": 124287882,
+      "sha256": "ae05190b68f864303a98a7d97e5d0f3ce4d45c3c6f4de4a84fbb218a24b58d95",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/202609.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261001.zip",
+      "bytes": 3847776,
+      "sha256": "38ae6d5eed233894202127b5db664da63edb829c6a401413bd8205d433fc5e93",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261001.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261002.zip",
+      "bytes": 3894418,
+      "sha256": "ea9c9fa5f90675ff0a8673768ecb0b98acec9a01f07c8d67719aab823ab29859",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261002.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261003.zip",
+      "bytes": 3393003,
+      "sha256": "62b493aea683ff7426f0e169c37fad2d963a417e0f9acaa7f8246ab387540f45",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261003.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261004.zip",
+      "bytes": 3156673,
+      "sha256": "d2f0d316c848c702d512fe83c26134f3026cf6d8520e9388334fed2d956e4dc1",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261004.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261005.zip",
+      "bytes": 3076020,
+      "sha256": "8e8f14f9691841ce36d1b4259fc34b33d4444841ba69f3aa37dda333ae6e043e",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261005.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261006.zip",
+      "bytes": 3811727,
+      "sha256": "b17a6268cb0a6efba58dabeba7a12b2a9ff05f765fcfa86cbe26b1b0c4efcbf6",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261006.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261007.zip",
+      "bytes": 3845712,
+      "sha256": "c61be01519ae33d299bcbae2a897d70c9f76836fbb2a254eb8ecc79aa12ea750",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261007.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261008.zip",
+      "bytes": 3907619,
+      "sha256": "4a06a40d816ce642240753306f6ce4b3a3bfceaf9b7a129c6e17e69b2a1f6e2f",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261008.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261009.zip",
+      "bytes": 3340427,
+      "sha256": "090a28eb10437f713a6d22f7875778fd3669f65b0138056c3252bf2197642040",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261009.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261010.zip",
+      "bytes": 3416967,
+      "sha256": "2f34ba2a21658e9ad196b554b54ddcadaae4adf1663bcd33cede968aaa1046a0",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261010.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261011.zip",
+      "bytes": 3119898,
+      "sha256": "4681c591c0dac2051ec6bfc5d151fdc2db6bf7a8f6be9b4a570a969ab753fd68",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261011.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261012.zip",
+      "bytes": 3803721,
+      "sha256": "867bf409da4f50232bfbd338b5c7d9ffd4a229786df18fb659ad955a0e27642c",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261012.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261013.zip",
+      "bytes": 3800173,
+      "sha256": "5a1988d921151d44f8c646eae3886b68caf0728cc8fd66c8205596ef751d38b4",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261013.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261014.zip",
+      "bytes": 3841273,
+      "sha256": "3ddb524150e6ba9eda0bcc25b112d5383603b268d6ccb632c52b73323f85f533",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261014.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261015.zip",
+      "bytes": 3834724,
+      "sha256": "8c2e3638b3c7f1bbe550959eec36e6b1370a2ca7f6f339f08efbe8390a781ebc",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261015.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261016.zip",
+      "bytes": 3872281,
+      "sha256": "8f11a845ed8f4dc4c84d99902dc12fb3f1fa2e291299229dbfce458c130a7eaa",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261016.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261017.zip",
+      "bytes": 3567090,
+      "sha256": "facc954cac283a924952b3219948a25fbe8ab99bc1ec1dc40241a6b7c6e15c3d",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261017.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261018.zip",
+      "bytes": 2951357,
+      "sha256": "e8f9e7c8bb89ae80d75f9f45392c2d8d06d19c8f29575c4408b25af437420f0c",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261018.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261019.zip",
+      "bytes": 3771640,
+      "sha256": "8b014cf17632592db16beba6244abd9cd46d407c10964130350817690dd43359",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261019.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261020.zip",
+      "bytes": 3821700,
+      "sha256": "f1e28046e072107a47de32810e3a01bec2ce8506aa7540f7b4367edbc67c1c28",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261020.json"
+    },
+    {
+      "path": "data/raw/transit_hourly_od/2026/tpss_emd_odh_20261021.zip",
+      "bytes": 3832131,
+      "sha256": "fe34723c7451d5841a395fdcfde26c9090f5f5001e2717685b3ffe6948e07dcb",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do",
+      "role": "raw",
+      "provenance_record": "data/metadata/transit_hourly_od/20261021.json"
+    }
+  ],
+  "groups": {
+    "data/raw/calendar": {
+      "files": 4,
+      "bytes": 323265
+    },
+    "data/raw/locations/admin": {
+      "files": 2,
+      "bytes": 2134607
+    },
+    "data/raw/transit_hourly_od/2023": {
+      "files": 12,
+      "bytes": 1438065717
+    },
+    "data/raw/transit_hourly_od/2024": {
+      "files": 12,
+      "bytes": 1641246953
+    },
+    "data/raw/transit_hourly_od/2025": {
+      "files": 12,
+      "bytes": 1545282795
+    },
+    "data/raw/transit_hourly_od/2026": {
+      "files": 30,
+      "bytes": 1267064829
+    }
+  },
+  "total_raw_bytes": 5894118166,
+  "validation_record": "data/evidence/final_verification.json",
+  "path_base": "B3_OD_WORKDIR (default: ../tmp/B3-1-work relative to B3-1)"
+}

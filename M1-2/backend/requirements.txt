@@ -1,0 +1,8 @@
+fastapi==0.115.12
+pydantic==2.11.4
+uvicorn==0.34.2
+firebase-admin==6.8.0
+openai==1.78.1
+python-dotenv==1.1.0
+starlette==0.46.2
+anyio==4.9.0

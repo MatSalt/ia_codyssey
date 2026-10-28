@@ -1,0 +1,1725 @@
+{
+  "contract_version": "1.6",
+  "client_config": {
+    "data": {
+      "album_min_photos": 1,
+      "album_max_photos": 50,
+      "caption_max_chars": 80,
+      "caption_ai_target_min_chars": 20,
+      "caption_ai_target_max_chars": 45,
+      "caption_allow_empty": true,
+      "upload_allowed_mimes": [
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+        "image/heif",
+        "image/heic"
+      ],
+      "upload_max_file_bytes": 20971520,
+      "upload_max_album_bytes": 314572800,
+      "upload_max_pixels": 40000000,
+      "char_count_mode": "nfc_unicode_code_points",
+      "upload_allowed_extensions": [
+        ".jpg",
+        ".jpeg",
+        ".png",
+        ".webp",
+        ".heif",
+        ".heic"
+      ],
+      "auth_providers": []
+    },
+    "request_id": "req-example"
+  },
+  "album_details": {
+    "draft": {
+      "data": {
+        "detail": {
+          "album": {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "title": "나의 사진첩",
+            "status": "draft",
+            "version": 3,
+            "page_count": 3,
+            "cover": {
+              "asset_id": "00000000-0000-4000-8000-000000000501",
+              "mime": "image/webp",
+              "width": 300,
+              "height": 225
+            },
+            "created_at": "2026-10-15T09:00:00Z",
+            "updated_at": "2026-10-15T10:00:00Z",
+            "published_at": null
+          },
+          "order_mode": "date",
+          "pages": [
+            {
+              "id": "00000000-0000-4000-8000-000000000101",
+              "position": 1,
+              "version": 1,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000201",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": null,
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000501",
+                "mime": "image/webp",
+                "width": 300,
+                "height": 225
+              },
+              "caption_text": null,
+              "sort_date": "2026-10-01T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000102",
+              "position": 2,
+              "version": 1,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000202",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": null,
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000502",
+                "mime": "image/webp",
+                "width": 300,
+                "height": 225
+              },
+              "caption_text": null,
+              "sort_date": "2026-10-02T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000103",
+              "position": 3,
+              "version": 1,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000203",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "result": null,
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000503",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": null,
+              "sort_date": "2026-10-03T12:00:00",
+              "sort_date_source": "exif"
+            }
+          ],
+          "active_run_id": null,
+          "generation_mode": null
+        },
+        "media_access": [
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000501",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000501",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000502",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000502",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000503",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000503",
+            "expires_at": "2026-10-15T10:05:00Z"
+          }
+        ]
+      },
+      "request_id": "req-example"
+    },
+    "processing": {
+      "data": {
+        "detail": {
+          "album": {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "title": "나의 사진첩",
+            "status": "processing",
+            "version": 4,
+            "page_count": 3,
+            "cover": {
+              "asset_id": "00000000-0000-4000-8000-000000000401",
+              "mime": "image/webp",
+              "width": 225,
+              "height": 300
+            },
+            "created_at": "2026-10-15T09:00:00Z",
+            "updated_at": "2026-10-15T10:00:00Z",
+            "published_at": null
+          },
+          "order_mode": "date",
+          "pages": [
+            {
+              "id": "00000000-0000-4000-8000-000000000101",
+              "position": 1,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000201",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000301",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000401",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "함께 걸었던 길에 소중한 순간이 남아 있어요.",
+              "sort_date": "2026-10-01T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000102",
+              "position": 2,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000202",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000302",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000402",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "작은 웃음이 모여 따뜻한 하루를 만들었어요.",
+              "sort_date": "2026-10-02T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000103",
+              "position": 3,
+              "version": 2,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000203",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "result": null,
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000503",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "다시 펼쳐 보고 싶은 오늘의 한 장면이에요.",
+              "sort_date": "2026-10-03T12:00:00",
+              "sort_date_source": "exif"
+            }
+          ],
+          "active_run_id": "00000000-0000-4000-8000-000000000601",
+          "generation_mode": "openai"
+        },
+        "media_access": [
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000401",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000401",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000402",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000402",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000503",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000503",
+            "expires_at": "2026-10-15T10:05:00Z"
+          }
+        ]
+      },
+      "request_id": "req-example"
+    },
+    "action_required": {
+      "data": {
+        "detail": {
+          "album": {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "title": "나의 사진첩",
+            "status": "action_required",
+            "version": 5,
+            "page_count": 3,
+            "cover": {
+              "asset_id": "00000000-0000-4000-8000-000000000401",
+              "mime": "image/webp",
+              "width": 225,
+              "height": 300
+            },
+            "created_at": "2026-10-15T09:00:00Z",
+            "updated_at": "2026-10-15T10:00:00Z",
+            "published_at": null
+          },
+          "order_mode": "date",
+          "pages": [
+            {
+              "id": "00000000-0000-4000-8000-000000000101",
+              "position": 1,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000201",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000301",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000401",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "함께 걸었던 길에 소중한 순간이 남아 있어요.",
+              "sort_date": "2026-10-01T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000102",
+              "position": 2,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000202",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000302",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000402",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "작은 웃음이 모여 따뜻한 하루를 만들었어요.",
+              "sort_date": "2026-10-02T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000103",
+              "position": 3,
+              "version": 2,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000203",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "result": null,
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000503",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "다시 펼쳐 보고 싶은 오늘의 한 장면이에요.",
+              "sort_date": "2026-10-03T12:00:00",
+              "sort_date_source": "exif"
+            }
+          ],
+          "active_run_id": "00000000-0000-4000-8000-000000000601",
+          "generation_mode": "openai"
+        },
+        "media_access": [
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000401",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000401",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000402",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000402",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000503",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000503",
+            "expires_at": "2026-10-15T10:05:00Z"
+          }
+        ]
+      },
+      "request_id": "req-example"
+    },
+    "review_ready": {
+      "data": {
+        "detail": {
+          "album": {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "title": "나의 사진첩",
+            "status": "review_ready",
+            "version": 6,
+            "page_count": 3,
+            "cover": {
+              "asset_id": "00000000-0000-4000-8000-000000000401",
+              "mime": "image/webp",
+              "width": 225,
+              "height": 300
+            },
+            "created_at": "2026-10-15T09:00:00Z",
+            "updated_at": "2026-10-15T10:00:00Z",
+            "published_at": null
+          },
+          "order_mode": "date",
+          "pages": [
+            {
+              "id": "00000000-0000-4000-8000-000000000101",
+              "position": 1,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000201",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000301",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000401",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "함께 걸었던 길에 소중한 순간이 남아 있어요.",
+              "sort_date": "2026-10-01T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000102",
+              "position": 2,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000202",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000302",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000402",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "작은 웃음이 모여 따뜻한 하루를 만들었어요.",
+              "sort_date": "2026-10-02T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000103",
+              "position": 3,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000203",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000303",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000403",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "다시 펼쳐 보고 싶은 오늘의 한 장면이에요.",
+              "sort_date": "2026-10-03T12:00:00",
+              "sort_date_source": "exif"
+            }
+          ],
+          "active_run_id": null,
+          "generation_mode": "openai"
+        },
+        "media_access": [
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000401",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000401",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000402",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000402",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000403",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000403",
+            "expires_at": "2026-10-15T10:05:00Z"
+          }
+        ]
+      },
+      "request_id": "req-example"
+    },
+    "published": {
+      "data": {
+        "detail": {
+          "album": {
+            "id": "00000000-0000-4000-8000-000000000001",
+            "title": "나의 사진첩",
+            "status": "published",
+            "version": 7,
+            "page_count": 3,
+            "cover": {
+              "asset_id": "00000000-0000-4000-8000-000000000401",
+              "mime": "image/webp",
+              "width": 225,
+              "height": 300
+            },
+            "created_at": "2026-10-15T09:00:00Z",
+            "updated_at": "2026-10-15T10:00:00Z",
+            "published_at": "2026-10-15T10:00:00Z"
+          },
+          "order_mode": "date",
+          "pages": [
+            {
+              "id": "00000000-0000-4000-8000-000000000101",
+              "position": 1,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000201",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000301",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000401",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "함께 걸었던 길에 소중한 순간이 남아 있어요.",
+              "sort_date": "2026-10-01T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000102",
+              "position": 2,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000202",
+                "mime": "image/webp",
+                "width": 1600,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000302",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000402",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "작은 웃음이 모여 따뜻한 하루를 만들었어요.",
+              "sort_date": "2026-10-02T12:00:00",
+              "sort_date_source": "exif"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000103",
+              "position": 3,
+              "version": 3,
+              "upload_status": "ready",
+              "source": {
+                "asset_id": "00000000-0000-4000-8000-000000000203",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "result": {
+                "asset_id": "00000000-0000-4000-8000-000000000303",
+                "mime": "image/webp",
+                "width": 900,
+                "height": 1200
+              },
+              "thumbnail": {
+                "asset_id": "00000000-0000-4000-8000-000000000403",
+                "mime": "image/webp",
+                "width": 225,
+                "height": 300
+              },
+              "caption_text": "다시 펼쳐 보고 싶은 오늘의 한 장면이에요.",
+              "sort_date": "2026-10-03T12:00:00",
+              "sort_date_source": "exif"
+            }
+          ],
+          "active_run_id": null,
+          "generation_mode": "openai"
+        },
+        "media_access": [
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000401",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000401",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000402",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000402",
+            "expires_at": "2026-10-15T10:05:00Z"
+          },
+          {
+            "asset_id": "00000000-0000-4000-8000-000000000403",
+            "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000403",
+            "expires_at": "2026-10-15T10:05:00Z"
+          }
+        ]
+      },
+      "request_id": "req-example"
+    },
+    "deleted": {
+      "error": {
+        "code": "RESOURCE_NOT_FOUND",
+        "message": "사진첩을 찾을 수 없습니다.",
+        "retryable": false,
+        "details": {}
+      },
+      "request_id": "req-example"
+    }
+  },
+  "generation_views": {
+    "processing": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "processing",
+        "run_status": "running",
+        "total_pages": 3,
+        "completed_pages": 2,
+        "failed_pages": 0,
+        "unknown_pages": 0,
+        "pending_pages": 1,
+        "progress_percent": 66,
+        "can_resume": false,
+        "poll_after_ms": 3000,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "running",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "action_required": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "action_required",
+        "run_status": "action_required",
+        "total_pages": 3,
+        "completed_pages": 2,
+        "failed_pages": 1,
+        "unknown_pages": 0,
+        "pending_pages": 0,
+        "progress_percent": 66,
+        "can_resume": true,
+        "poll_after_ms": null,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "failed",
+                "completion_kind": null,
+                "error_code": "MEDIA_SAVE_FAILED",
+                "retryable": true
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "unknown_result": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "action_required",
+        "run_status": "action_required",
+        "total_pages": 3,
+        "completed_pages": 2,
+        "failed_pages": 0,
+        "unknown_pages": 1,
+        "pending_pages": 0,
+        "progress_percent": 66,
+        "can_resume": false,
+        "poll_after_ms": null,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "unknown",
+                "completion_kind": null,
+                "error_code": "AI_RESULT_UNKNOWN",
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "queued",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "completed": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "review_ready",
+        "run_status": "succeeded",
+        "total_pages": 3,
+        "completed_pages": 3,
+        "failed_pages": 0,
+        "unknown_pages": 0,
+        "pending_pages": 0,
+        "progress_percent": 100,
+        "can_resume": false,
+        "poll_after_ms": null,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "mixed_unknown_local_failed": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "action_required",
+        "run_status": "action_required",
+        "total_pages": 3,
+        "completed_pages": 1,
+        "failed_pages": 1,
+        "unknown_pages": 1,
+        "pending_pages": 0,
+        "progress_percent": 33,
+        "can_resume": true,
+        "poll_after_ms": null,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "unknown",
+                "completion_kind": null,
+                "error_code": "AI_RESULT_UNKNOWN",
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "queued",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "failed",
+                "completion_kind": null,
+                "error_code": "MEDIA_SAVE_FAILED",
+                "retryable": true
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "mixed_unknown_local_resuming": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "action_required",
+        "run_status": "action_required",
+        "total_pages": 3,
+        "completed_pages": 1,
+        "failed_pages": 0,
+        "unknown_pages": 1,
+        "pending_pages": 1,
+        "progress_percent": 33,
+        "can_resume": false,
+        "poll_after_ms": 3000,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "unknown",
+                "completion_kind": null,
+                "error_code": "AI_RESULT_UNKNOWN",
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "queued",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "queued",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "mixed_unknown_ai_failed": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "action_required",
+        "run_status": "action_required",
+        "total_pages": 3,
+        "completed_pages": 1,
+        "failed_pages": 1,
+        "unknown_pages": 1,
+        "pending_pages": 0,
+        "progress_percent": 33,
+        "can_resume": false,
+        "poll_after_ms": null,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "unknown",
+                "completion_kind": null,
+                "error_code": "AI_RESULT_UNKNOWN",
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "queued",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "failed",
+                "completion_kind": null,
+                "error_code": "AI_TEMPORARY_FAILURE",
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "queued",
+                "completion_kind": null,
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    },
+    "recovered_unknown_awaiting_resume": {
+      "data": {
+        "run_id": "00000000-0000-4000-8000-000000000601",
+        "album_id": "00000000-0000-4000-8000-000000000001",
+        "album_status": "action_required",
+        "run_status": "action_required",
+        "total_pages": 3,
+        "completed_pages": 2,
+        "failed_pages": 1,
+        "unknown_pages": 0,
+        "pending_pages": 0,
+        "progress_percent": 66,
+        "can_resume": true,
+        "poll_after_ms": null,
+        "pages": [
+          {
+            "page_id": "00000000-0000-4000-8000-000000000101",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000102",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "failed",
+                "completion_kind": null,
+                "error_code": "AI_TEMPORARY_FAILURE",
+                "retryable": true
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          },
+          {
+            "page_id": "00000000-0000-4000-8000-000000000103",
+            "tasks": [
+              {
+                "stage": "caption",
+                "status": "succeeded",
+                "completion_kind": "provider",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "image_transform",
+                "status": "succeeded",
+                "completion_kind": "passthrough",
+                "error_code": null,
+                "retryable": false
+              },
+              {
+                "stage": "optimize",
+                "status": "succeeded",
+                "completion_kind": "local",
+                "error_code": null,
+                "retryable": false
+              }
+            ]
+          }
+        ],
+        "generation_mode": "openai"
+      },
+      "request_id": "req-example"
+    }
+  },
+  "errors": {
+    "VERSION_CONFLICT": {
+      "error": {
+        "code": "VERSION_CONFLICT",
+        "message": "다른 변경이 반영되었습니다. 최신 내용을 확인해주세요.",
+        "retryable": false,
+        "details": {
+          "resource_type": "page",
+          "resource_id": "00000000-0000-4000-8000-000000000101",
+          "current_version": 4
+        }
+      },
+      "request_id": "req-example"
+    },
+    "STATE_CONFLICT": {
+      "error": {
+        "code": "STATE_CONFLICT",
+        "message": "생성이 끝난 뒤 글귀를 수정할 수 있습니다.",
+        "retryable": false,
+        "details": {}
+      },
+      "request_id": "req-example"
+    },
+    "IDEMPOTENCY_CONFLICT": {
+      "error": {
+        "code": "IDEMPOTENCY_CONFLICT",
+        "message": "같은 요청 키로 다른 내용을 보냈습니다.",
+        "retryable": false,
+        "details": {}
+      },
+      "request_id": "req-example"
+    },
+    "UPLOAD_NOT_READY": {
+      "error": {
+        "code": "UPLOAD_NOT_READY",
+        "message": "모든 사진의 업로드 검증이 완료되어야 합니다.",
+        "retryable": false,
+        "details": {
+          "page_ids": [
+            "00000000-0000-4000-8000-000000000103"
+          ]
+        }
+      },
+      "request_id": "req-example"
+    },
+    "CONSENT_REQUIRED": {
+      "error": {
+        "code": "CONSENT_REQUIRED",
+        "message": "사진 업로드와 AI 처리를 위한 최신 동의가 필요합니다.",
+        "retryable": false,
+        "details": {}
+      },
+      "request_id": "req-example"
+    },
+    "RESUME_NOT_ALLOWED": {
+      "error": {
+        "code": "RESUME_NOT_ALLOWED",
+        "message": "지금은 안전하게 재개할 수 있는 실패 단계가 없습니다.",
+        "retryable": false,
+        "details": {}
+      },
+      "request_id": "req-example"
+    }
+  },
+  "viewer": {
+    "data": {
+      "album_id": "00000000-0000-4000-8000-000000000001",
+      "title": "나의 사진첩",
+      "version": 7,
+      "pages": [
+        {
+          "id": "00000000-0000-4000-8000-000000000101",
+          "position": 1,
+          "image": {
+            "asset_id": "00000000-0000-4000-8000-000000000301",
+            "mime": "image/webp",
+            "width": 900,
+            "height": 1200
+          },
+          "caption_text": "함께 걸었던 길에 소중한 순간이 남아 있어요."
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000102",
+          "position": 2,
+          "image": {
+            "asset_id": "00000000-0000-4000-8000-000000000302",
+            "mime": "image/webp",
+            "width": 900,
+            "height": 1200
+          },
+          "caption_text": "작은 웃음이 모여 따뜻한 하루를 만들었어요."
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000103",
+          "position": 3,
+          "image": {
+            "asset_id": "00000000-0000-4000-8000-000000000303",
+            "mime": "image/webp",
+            "width": 900,
+            "height": 1200
+          },
+          "caption_text": "다시 펼쳐 보고 싶은 오늘의 한 장면이에요."
+        }
+      ],
+      "media_access": [
+        {
+          "asset_id": "00000000-0000-4000-8000-000000000301",
+          "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000301",
+          "expires_at": "2026-10-15T10:05:00Z"
+        },
+        {
+          "asset_id": "00000000-0000-4000-8000-000000000302",
+          "url": "https://example.invalid/media/00000000-0000-4000-8000-000000000302",
+          "expires_at": "2026-10-15T10:05:00Z"
+        }
+      ],
+      "music": {
+        "track_id": "mori-bgm-v1",
+        "url": "/audio/bgm.mp3",
+        "title": "사진첩 배경음악"
+      },
+      "generation_mode": "openai"
+    },
+    "request_id": "req-example"
+  },
+  "upload_requests": {
+    "heif_heic_batch": {
+      "expected_version": 1,
+      "files": [
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000801",
+          "filename": "IMG_0001.HEIC",
+          "mime": "",
+          "bytes": 3500000,
+          "file_last_modified_at": "2026-10-01T03:00:00Z"
+        },
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000802",
+          "filename": "IMG_0002.heif",
+          "mime": "image/heif",
+          "bytes": 2800000
+        },
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000803",
+          "filename": "IMG_0003.jpg",
+          "mime": "image/jpeg",
+          "bytes": 1500000
+        }
+      ]
+    },
+    "preprocessed_webp": {
+      "expected_version": 1,
+      "files": [
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000804",
+          "filename": "photo.webp",
+          "mime": "image/webp",
+          "bytes": 420000,
+          "file_last_modified_at": "2026-10-01T03:00:00Z",
+          "preprocessing": {
+            "version": 1,
+            "original_width": 3000,
+            "original_height": 4000,
+            "captured_at_raw": "2026:10:01 12:00:00",
+            "captured_timezone": "+09:00"
+          }
+        }
+      ]
+    }
+  },
+  "upload_reservation": {
+    "data": {
+      "batch_id": "00000000-0000-4000-8000-000000000700",
+      "album_version": 2,
+      "uploads": [
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000801",
+          "upload_id": "00000000-0000-4000-8000-000000000701",
+          "page_id": "00000000-0000-4000-8000-000000000101",
+          "asset_id": "00000000-0000-4000-8000-000000000901",
+          "status": "reserved",
+          "method": "PUT",
+          "upload_url": "https://example.invalid/upload/00000000-0000-4000-8000-000000000701",
+          "required_headers": {
+            "Content-Type": "image/heic"
+          },
+          "expires_at": "2026-10-15T09:15:00Z"
+        },
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000802",
+          "upload_id": "00000000-0000-4000-8000-000000000702",
+          "page_id": "00000000-0000-4000-8000-000000000102",
+          "asset_id": "00000000-0000-4000-8000-000000000902",
+          "status": "reserved",
+          "method": "PUT",
+          "upload_url": "https://example.invalid/upload/00000000-0000-4000-8000-000000000702",
+          "required_headers": {
+            "Content-Type": "image/heif"
+          },
+          "expires_at": "2026-10-15T09:15:00Z"
+        },
+        {
+          "client_file_id": "00000000-0000-4000-8000-000000000803",
+          "upload_id": "00000000-0000-4000-8000-000000000703",
+          "page_id": "00000000-0000-4000-8000-000000000103",
+          "asset_id": "00000000-0000-4000-8000-000000000903",
+          "status": "reserved",
+          "method": "PUT",
+          "upload_url": "https://example.invalid/upload/00000000-0000-4000-8000-000000000703",
+          "required_headers": {
+            "Content-Type": "image/jpeg"
+          },
+          "expires_at": "2026-10-15T09:15:00Z"
+        }
+      ]
+    },
+    "request_id": "req-example"
+  },
+  "upload_views": {
+    "validating": {
+      "data": {
+        "upload_id": "00000000-0000-4000-8000-000000000701",
+        "page_id": "00000000-0000-4000-8000-000000000101",
+        "status": "validating",
+        "error_code": null,
+        "album_version": 2
+      },
+      "request_id": "req-example"
+    },
+    "ready": {
+      "data": {
+        "upload_id": "00000000-0000-4000-8000-000000000701",
+        "page_id": "00000000-0000-4000-8000-000000000101",
+        "status": "ready",
+        "error_code": null,
+        "album_version": 3
+      },
+      "request_id": "req-example"
+    },
+    "rejected_decode": {
+      "data": {
+        "upload_id": "00000000-0000-4000-8000-000000000701",
+        "page_id": "00000000-0000-4000-8000-000000000101",
+        "status": "rejected",
+        "error_code": "IMAGE_DECODE_FAILED",
+        "album_version": 3
+      },
+      "request_id": "req-example"
+    },
+    "rejected_normalization": {
+      "data": {
+        "upload_id": "00000000-0000-4000-8000-000000000701",
+        "page_id": "00000000-0000-4000-8000-000000000101",
+        "status": "rejected",
+        "error_code": "IMAGE_NORMALIZATION_FAILED",
+        "album_version": 3
+      },
+      "request_id": "req-example"
+    },
+    "expired": {
+      "data": {
+        "upload_id": "00000000-0000-4000-8000-000000000701",
+        "page_id": "00000000-0000-4000-8000-000000000101",
+        "status": "expired",
+        "error_code": null,
+        "album_version": 2
+      },
+      "request_id": "req-example"
+    }
+  },
+  "r2_upload_completion": {
+    "required_headers": {
+      "Content-Type": "image/jpeg",
+      "If-None-Match": "*"
+    },
+    "request": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "notes": "형식 설명용 합성 예시이며 실제 업로드 파일의 SHA256으로 대체해야 함. local은 {} 호환."
+  },
+  "generation_capabilities": {
+    "data": {
+      "dev_auth_enabled": false,
+      "dev_ai_enabled": false,
+      "generation_enabled": true,
+      "generation_mode": "openai"
+    },
+    "request_id": "req-example"
+  }
+}

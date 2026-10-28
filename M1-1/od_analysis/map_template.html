@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>서울 이동 변화 지도 · B3-1</title>
+<style>
+:root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;color:#182f35;background:#f2f5f2}*{box-sizing:border-box}body{margin:0}main{max-width:1420px;margin:auto;padding:36px 28px}h1{font-size:34px;letter-spacing:-1.3px;margin:8px 0 12px}h2{font-size:22px;margin:0 0 14px}.eyebrow{color:#347568;font-size:12px;letter-spacing:2px;font-weight:750}.intro{color:#556970;line-height:1.7;max-width:900px;font-size:15px}.controls{display:flex;flex-wrap:wrap;gap:16px;background:white;padding:20px;border-radius:18px;margin:24px 0 16px;border:1px solid #dce5df}label{font-size:12px;color:#53656b;display:flex;flex-direction:column;gap:7px}select,button{font:inherit;border:1px solid #cddad3;background:#fff;padding:10px 12px;border-radius:9px;color:#203d43}select{font-size:14px}button{cursor:pointer}button:hover{background:#e9f2ef}.layout{display:grid;grid-template-columns:1.65fr 1fr;gap:18px}.card{background:white;border:1px solid #dce5df;border-radius:18px;padding:24px}.maphead{display:flex;justify-content:space-between;gap:12px}.sub{font-size:13px;color:#607279;line-height:1.7}.legend{display:flex;align-items:center;justify-content:center;gap:10px;font-size:12px;margin-top:14px}.ramp{height:10px;width:210px;border-radius:6px;background:linear-gradient(90deg,#416ea2,#f2f4f3,#09755b)}svg{width:100%;display:block}.district{stroke:white;stroke-width:1.4;cursor:pointer;transition:fill .2s}.district:hover,.district.selected{stroke:#183942;stroke-width:3}.district:focus{outline:none;stroke:#111;stroke-width:3}.maplabel{font-size:11px;fill:#17373d;pointer-events:none;paint-order:stroke;stroke:#fff;stroke-width:2.3px;stroke-linejoin:round;font-weight:650}.big{font-size:42px;font-weight:740;letter-spacing:-1px;margin:12px 0}.positive{color:#08765d}.negative{color:#416ea2}.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:15px 0;border-top:1px solid #e3e9e6;border-bottom:1px solid #e3e9e6;margin:16px 0}.stats strong{display:block;font-size:20px;margin-top:7px}#rank{max-height:300px;overflow:auto;margin-top:14px}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:right;border-bottom:1px solid #e7eeea;padding:10px 8px}th:first-child,td:first-child{text-align:left}td button{padding:2px 0;border:0;background:none;color:#176e58}.note{margin-top:18px;font-size:13px;line-height:1.8;color:#52666c}.warning{background:#fff5dc;padding:10px 14px;border-radius:9px;font-size:13px;margin:0 0 18px;color:#785c1a}#trend{margin-top:14px}.foot{margin-top:18px;font-size:12px;color:#687a80;line-height:1.8}a{color:#176e58}#tooltip{position:fixed;display:none;pointer-events:none;background:#183942;color:white;padding:9px 12px;border-radius:8px;font-size:13px;z-index:2}.period{font-size:15px;color:#536970;font-weight:500}.actions{display:flex;gap:7px;align-items:end}@media(max-width:800px){main{padding:22px 14px}.layout{grid-template-columns:1fr}h1{font-size:27px}.card{padding:18px}.controls{gap:12px}.maplabel{font-size:10px}.big{font-size:34px}} 
+[hidden]{display:none!important}
+</style></head><body><main>
+<div class="eyebrow">SEOUL MOBILITY / 2023—2026</div>
+<h1>어느 지역으로 향하는 이동이 달라졌을까?</h1>
+<p class="intro">서울 25개 자치구의 연도·월별 관측 이동량을 비교하세요. 초록은 증가, 파랑은 감소입니다.<br>기존 분석의 <b>398개 동 사이 대중교통 이동</b>을 구별로 묶었습니다. 관광객 수나 구 경계를 넘은 이동만을 뜻하지 않습니다.</p>
+<section class="controls" aria-label="비교 조건">
+<label>비교 단위<select id="mode"><option value="year">연도별</option><option value="month">월별</option></select></label>
+<label>기준 연도<select id="baseYear"></select></label><label class="monthField">기준 월<select id="baseMonth"></select></label>
+<label>비교 연도<select id="currentYear"></select></label><label class="monthField">비교 월<select id="currentMonth"></select></label>
+<label>시간 구간<select id="window"><option value="weekend_day">주말 10–22시</option><option value="weekday_morning">평일 07–10시</option></select></label>
+<label>이동 방향<select id="scope"><option value="internal_in">지역행 이동 (유입)</option><option value="internal_out">지역발 이동 (유출)</option></select></label>
+<div class="actions"><button id="yoy">전년 같은 달</button><button id="latest">2026년 8월 보기</button></div>
+</section>
+<div id="warning" class="warning" hidden></div>
+<div class="layout"><section class="card"><div class="maphead"><div><h2>서울 이동 변화율</h2><div id="period" class="period"></div></div><span class="sub">구를 클릭해 상세 보기</span></div>
+<svg id="map" viewBox="0 0 720 570" role="img" aria-label="서울 25개 자치구의 이동량 변화 지도"></svg>
+<div class="legend"><span>−50% 이하</span><div class="ramp"></div><span>+50% 이상</span></div><p class="sub" style="text-align:center">회색: 비교 불가 · 색상 범위는 고정 ±50%, 정확한 값은 상세에 표시</p>
+</section><section class="card" aria-live="polite"><div class="eyebrow">DISTRICT DETAIL</div><h2 id="districtTitle" style="margin-top:10px"></h2><div id="change" class="big"></div><div id="difference" class="sub"></div><div class="stats"><div><span class="sub" id="baseLabel"></span><strong id="baseValue"></strong></div><div><span class="sub" id="currentLabel"></span><strong id="currentValue"></strong></div></div><div id="coverage" class="sub"></div>
+<h3 style="font-size:15px;margin:24px 0 8px">같은 월끼리 보는 연도별 흐름</h3><div class="sub">현재 선택한 시간 구간·방향의 월별 값 (건/시간)</div><svg id="trend" viewBox="0 0 440 180" aria-label="연도별 월 추세 비교"></svg><div id="trendLegend" class="sub"></div>
+<h3 style="font-size:15px;margin:22px 0 5px">자치구별 변화율</h3><div id="rank"></div></section></div>
+<section class="card note"><b>어떻게 읽나요?</b><br>
+① 일반일만 사용하고 공휴일·특별일은 제외합니다. 월 안에서는 각 요일에 같은 가중치, 연도 비교에서는 각 월에 같은 가중치를 줍니다. 주말은 토·일, 평일 아침은 월~금 각각 최소 2일이 있어야 합니다.<br>
+② 변화율 = (비교 값 ÷ 기준 값 − 1) × 100. 구 안의 분석 대상 동·시간이 하나라도 빠진 날은 해당 구의 계산에서 제외합니다. 원본의 빈 셀은 미상이며 알려진 값의 합계입니다.<br>
+③ 2026년이 포함된 연도 비교는 양쪽 모두 <b>1~8월</b>로 맞춥니다. 지역 코드 검증 범위 밖인 2026년 9~10월은 지도에서 제외합니다. 월별로 다른 달을 고르면 계절 차이가 섞입니다.<br>
+④ 같은 구 안의 서로 다른 동 사이 이동도 포함합니다. 유입·유출은 같은 이동을 서로 다른 쪽에서 센 것이므로 더하지 않습니다. 서울 밖 출발·동 내부 이동은 제외합니다.<br>
+⑤ 시간대가 승차 기준인지 하차 기준인지 미확정입니다. 주말 이동은 여가 방문의 단서이며 관광·매출·인기의 원인을 입증하지 않습니다. <b>색은 구 전체 경계에 표시하지만 값은 고정 패널 동만 포함</b>합니다.
+</section>
+<footer class="foot">이동량: <a href="https://data.seoul.go.kr/dataList/OA-21226/F/1/datasetView.do">서울 열린데이터광장 OA-21226</a> · 지도: <a href="https://data.seoul.go.kr/opendata/seoulStay/grid_viewer.html">서울시 격자 선택기 자치구 경계 (2025-06-30)</a><br>이 파일은 데이터와 지도를 내장해 인터넷 없이 열 수 있습니다. <a href="REPORT.md">분석 리포트</a> · <a href="data/tables/map_monthly.csv">지도 가공표</a></footer>
+</main><div id="tooltip"></div><script id="payload" type="application/json">__PAYLOAD__</script><script>
+const DATA=JSON.parse(document.getElementById('payload').textContent), $=id=>document.getElementById(id), NS='http://www.w3.org/2000/svg';
+const YEARS=[2023,2024,2025,2026], colors=['#89979b','#c89239','#416ea2','#08765d'];let selected='성동구',results=[];
+for(const id of ['baseYear','currentYear']) YEARS.forEach(y=>$(id).add(new Option(y+'년',y)));
+for(const id of ['baseMonth','currentMonth']) for(let m=1;m<=12;m++)$(id).add(new Option(m+'월',m));
+$('baseYear').value='2023';$('currentYear').value='2025';$('baseMonth').value='8';$('currentMonth').value='8';
+const districts=DATA.geometry.features.map(f=>f.properties.name).sort(), idx=new Map(DATA.rows.map(r=>[[r.year,r.month,r.scope,r.district,r.window].join('|'),r]));
+const row=(y,m,d)=>idx.get([y,m,$('scope').value,d,$('window').value].join('|'));
+const fmt=x=>x==null?'자료 없음':x.toLocaleString('ko-KR',{maximumFractionDigits:1});const pct=x=>x==null?'비교 불가':(x>0?'+':'')+fmt(x)+'%';
+function months(side){if($('mode').value==='month')return [Number($(side+'Month').value)];return Array.from({length:Math.max(+$('baseYear').value,+$('currentYear').value)===2026?8:12},(_,i)=>i+1)}
+function value(side,d){const y=+$(side+'Year').value, ms=months(side),rs=ms.map(m=>row(y,m,d));if(rs.some(r=>!r||!r.eligible||r.value==null))return null;return rs.reduce((a,r)=>a+r.value,0)/rs.length}
+function period(side){return $(side+'Year').value+'년 '+($('mode').value==='month'?$(side+'Month').value+'월':months(side).length===8?'1–8월':'1–12월')}
+function color(v){if(v==null)return '#d2d8d8';const t=Math.min(Math.abs(v)/50,1),a=[242,244,243],b=v<0?[65,110,162]:[9,117,91];return 'rgb('+a.map((n,i)=>Math.round(n+(b[i]-n)*t)).join(',')+')'}
+function svgEl(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const [k,v]of Object.entries(attrs))e.setAttribute(k,v);parent.append(e);return e}
+const rings=f=>f.geometry.type==='Polygon'?f.geometry.coordinates:f.geometry.coordinates.flat();
+const coords=DATA.geometry.features.flatMap(f=>rings(f).flat()), xs=coords.map(p=>p[0]*Math.cos(37.55*Math.PI/180)),ys=coords.map(p=>p[1]);const minX=Math.min(...xs),maxX=Math.max(...xs),minY=Math.min(...ys),maxY=Math.max(...ys),scale=Math.min(650/(maxX-minX),510/(maxY-minY));
+const project=p=>[35+(p[0]*Math.cos(37.55*Math.PI/180)-minX)*scale,535-(p[1]-minY)*scale];
+const mapPaths=new Map();
+for(const f of DATA.geometry.features){const d=rings(f).map(r=>r.map((p,i)=>(i?'L':'M')+project(p).join(',')).join(' ')+'Z').join(' '),name=f.properties.name;
+ const p=svgEl('path',{d,class:'district',tabindex:0,role:'button','data-name':name},$('map'));mapPaths.set(name,p);p.onclick=()=>{selected=name;renderDetail()};p.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();p.onclick()}};
+ p.onmousemove=e=>{const r=results.find(x=>x.district===name);$('tooltip').textContent=name+' · '+pct(r?.pct);$('tooltip').style.cssText=`display:block;left:${Math.min(e.clientX+12,innerWidth-200)}px;top:${e.clientY+12}px`};p.onmouseleave=()=>{$('tooltip').style.display='none'};
+ // Polygon centroid of the largest outer ring, used only to place labels.
+ const outer=rings(f).reduce((a,b)=>a.length>b.length?a:b), points=outer.map(project);let area=0,cx=0,cy=0;
+ for(let i=0;i<points.length-1;i++){const [x,y]=points[i],[u,v]=points[i+1],a=x*v-u*y;area+=a;cx+=(x+u)*a;cy+=(y+v)*a}
+ const text=svgEl('text',{x:cx/(3*area),y:cy/(3*area),'text-anchor':'middle',class:'maplabel'},$('map'));text.textContent=name;
+}
+function render(){document.querySelectorAll('.monthField').forEach(e=>e.hidden=$('mode').value!=='month');$('yoy').hidden=$('mode').value!=='month';
+ results=districts.map(d=>{const a=value('base',d),b=value('current',d);return {district:d,a,b,pct:a!=null&&b!=null&&a>0?(b/a-1)*100:null}});
+ const messages=[];if(Math.max(+$('baseYear').value,+$('currentYear').value)===2026&&$('mode').value==='year')messages.push('2026년은 연간 전체가 없어 양쪽 모두 1~8월로 비교합니다.');
+ if($('mode').value==='month'&&$('baseMonth').value!==$('currentMonth').value)messages.push('다른 달 비교에는 계절 차이가 섞입니다. 전년 같은 달 비교를 권장합니다.');
+ if(results.some(r=>r.pct==null))messages.push('자료가 없거나 비교 기준을 충족하지 못한 구는 회색으로 표시합니다.');
+ $('warning').textContent=messages.join(' ');$('warning').hidden=!messages.length;$('period').textContent=period('base')+' → '+period('current');
+ for(const r of results){const p=mapPaths.get(r.district);p.setAttribute('fill',color(r.pct));p.setAttribute('aria-label',r.district+' '+pct(r.pct))}renderDetail();
+}
+function coverage(side){const y=+$(side+'Year').value,ms=months(side);let observed=0,expected=0;const missing=[];for(const m of ms){const c=DATA.coverage[y+'-'+String(m).padStart(2,'0')];observed+=c?.observed||0;expected+=c?.expected||new Date(y,m,0).getDate();missing.push(...(c?.missing||[]))}return {observed,expected,missing}}
+function renderDetail(){const r=results.find(r=>r.district===selected);for(const [d,p]of mapPaths)p.classList.toggle('selected',d===selected);
+ $('districtTitle').textContent=selected;$('change').textContent=pct(r.pct);$('change').className='big '+(r.pct==null?'':r.pct>=0?'positive':'negative');
+ $('difference').textContent=r.a!=null&&r.b!=null?'시간당 '+(r.b-r.a>=0?'+':'')+fmt(r.b-r.a)+'건 변화':'선택 기간의 자료 또는 유효한 비교 기준이 부족합니다.';
+ for(const side of ['base','current']){$(side+'Label').textContent=period(side);$(side+'Value').textContent=fmt(side==='base'?r.a:r.b)+' 건/시간'}
+ const a=coverage('base'),b=coverage('current'),sample=DATA.rows.find(x=>x.district===selected);
+ const actual=side=>months(side).map(m=>row(+$(side+'Year').value,m,selected)?.days||0).reduce((x,y)=>x+y,0);
+ const invalid=['base','current'].flatMap(side=>months(side).filter(m=>{const x=row(+$(side+'Year').value,m,selected);return !x||!x.eligible||x.value==null}).map(m=>$(side+'Year').value+'년 '+m+'월'));
+ $('coverage').textContent=`${selected} 고정 패널 ${sample.panel_dongs}개 동 포함 · 원본 날짜: 기준 ${a.observed}/${a.expected}일, 비교 ${b.observed}/${b.expected}일. 선택 구간 실제 계산일: 기준 ${actual('base')}일 / 비교 ${actual('current')}일 (공휴일·특별일·불완전한 날 제외).`+(invalid.length?' 비교 불가 월: '+[...new Set(invalid)].join(', ')+'.':'');
+ const sorted=[...results].sort((a,b)=>(b.pct??-Infinity)-(a.pct??-Infinity));$('rank').innerHTML='<table><thead><tr><th>지역</th><th>기준</th><th>비교</th><th>변화율</th></tr></thead><tbody>'+sorted.map(x=>`<tr><td><button data-district="${x.district}">${x.district}</button></td><td>${fmt(x.a)}</td><td>${fmt(x.b)}</td><td>${pct(x.pct)}</td></tr>`).join('')+'</tbody></table>';
+ $('rank').querySelectorAll('button').forEach(e=>e.onclick=()=>{selected=e.dataset.district;renderDetail()});drawTrend();
+}
+function drawTrend(){const svg=$('trend');svg.replaceChildren();const series=YEARS.map(y=>Array.from({length:12},(_,i)=>{const r=row(y,i+1,selected);return r?.eligible?r.value:null}));const max=Math.max(1,...series.flat().filter(v=>v!=null))*1.08,x=m=>46+(m-1)*33,y=v=>140-v/max*116;
+ for(let i=0;i<3;i++){const v=max*i/2;svgEl('line',{x1:46,x2:410,y1:y(v),y2:y(v),stroke:'#e2e9e5'},svg);svgEl('text',{x:40,y:y(v)+4,'text-anchor':'end','font-size':10,fill:'#667b7e'},svg).textContent=Math.round(v).toLocaleString()}
+ for(let m=1;m<=12;m++)svgEl('text',{x:x(m),y:162,'text-anchor':'middle','font-size':10,fill:'#667b7e'},svg).textContent=m;
+ series.forEach((vs,i)=>{let d='',gap=true;vs.forEach((v,j)=>{if(v==null){gap=true;return}d+=(gap?'M':'L')+x(j+1)+','+y(v)+' ';gap=false;const c=svgEl('circle',{cx:x(j+1),cy:y(v),r:2.5,fill:colors[i]},svg);svgEl('title',{},c).textContent=YEARS[i]+'년 '+(j+1)+'월 '+fmt(v)+' 건/시간'});svgEl('path',{d,fill:'none',stroke:colors[i],'stroke-width':2},svg)});
+ $('trendLegend').innerHTML=YEARS.map((y,i)=>`<span style="color:${colors[i]};margin-right:12px">● ${y}${y===2026?' (1–8월)':''}</span>`).join('');
+}
+document.querySelectorAll('select').forEach(e=>e.onchange=render);$('yoy').onclick=()=>{$('baseYear').value=String(Math.max(2023,+$('currentYear').value-1));$('baseMonth').value=$('currentMonth').value;render()};$('latest').onclick=()=>{$('mode').value='month';$('baseYear').value='2025';$('currentYear').value='2026';$('baseMonth').value=$('currentMonth').value='8';render()};render();
+</script></body></html>

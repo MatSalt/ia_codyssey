@@ -1,0 +1,116 @@
+{
+  "kasi_tables": {
+    "2023": [
+      "20230101",
+      "20230815",
+      "20230121",
+      "20230122",
+      "20230123",
+      "20230928",
+      "20230929",
+      "20230930",
+      "20230124",
+      "20231003",
+      "20230301",
+      "20231009",
+      "20230505",
+      "20231225",
+      "20230527",
+      "20230606"
+    ],
+    "2024": [
+      "20240101",
+      "20240815",
+      "20240209",
+      "20240210",
+      "20240211",
+      "20240916",
+      "20240917",
+      "20240918",
+      "20240212",
+      "20241003",
+      "20240301",
+      "20241009",
+      "20240410",
+      "20241225",
+      "20240505",
+      "20240506",
+      "20240515",
+      "20240606"
+    ],
+    "2025": [
+      "20250101",
+      "20250815",
+      "20250128",
+      "20250129",
+      "20250130",
+      "20251003",
+      "20250301",
+      "20251005",
+      "20251006",
+      "20251007",
+      "20250303",
+      "20251008",
+      "20250505",
+      "20251009",
+      "20250505",
+      "20251225",
+      "20250506",
+      "20250606"
+    ],
+    "2026": [
+      "20260101",
+      "20260815",
+      "20260216",
+      "20260217",
+      "20260218",
+      "20260817",
+      "20260301",
+      "20260924",
+      "20260925",
+      "20260926",
+      "20260302",
+      "20261003",
+      "20260505",
+      "20261005",
+      "20260524",
+      "20261009",
+      "20260525",
+      "20261225",
+      "20260603",
+      "20260606"
+    ]
+  },
+  "supplements": {
+    "20230529": [
+      "부처님오신날 대체공휴일",
+      "https://www.mpm.go.kr/mpm/comm/newsPress/newsPressRelease/?cntId=3625&mode=view"
+    ],
+    "20231002": [
+      "임시공휴일",
+      "https://www.korea.kr/news/policyNewsView.do?newsId=148919605"
+    ],
+    "20241001": [
+      "임시공휴일",
+      "https://www.korea.kr/news/policyNewsView.do?newsId=148933400"
+    ],
+    "20250127": [
+      "임시공휴일",
+      "https://www.korea.kr/news/policyNewsView.do?newsId=148938559"
+    ],
+    "20250603": [
+      "대통령선거일",
+      "https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&nttId=116942"
+    ],
+    "20260501": [
+      "노동절",
+      "https://www.mpm.go.kr/mpm/comm/newsPress/newsPressRelease/?cntId=4250&mode=view"
+    ],
+    "20260717": [
+      "제헌절",
+      "https://www.mpm.go.kr/mpm/comm/newsPress/newsPressRelease/?cntId=4250&mode=view"
+    ]
+  },
+  "method": "KASI preserved official calendar pages + subsequent official notices. May 1 in 2023-2025 is an analytical special day, not a general public holiday.",
+  "limit": "Does not classify school vacation, weather, local events, or private workplace holidays."
+}

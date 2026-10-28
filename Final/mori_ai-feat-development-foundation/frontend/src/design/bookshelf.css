@@ -1,0 +1,56 @@
+/* Apple type/color reference: design-preview/apple-token-reference.json.
+   Revision 2: user-provided 2026-10-17 bookshelf concept.
+   Warm canvas, glass, spacing and corner geometry are mori web adaptations.
+   CSS blur approximates the reference; it is not Apple's native Liquid Glass. */
+.mori-design{--canvas:#faf9f6;--surface:#f2f2f7;--ink:#171719;--muted:#68686d;--line:#dededc;--danger:#a32019;--glass:rgba(255,255,255,.68);--glass-border:rgba(255,255,255,.95);--radius-card:17px;--radius-control:999px;color:var(--ink);background:var(--canvas);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;font-synthesis:none;line-height:1.5;-webkit-font-smoothing:antialiased}
+.mori-design *,.mori-design *::before,.mori-design *::after{box-sizing:border-box}
+.mori-design button,.mori-design a{-webkit-tap-highlight-color:transparent}
+.mori-design button{font:inherit;cursor:pointer}.mori-design button:disabled{cursor:default;opacity:.5}
+.mori-design :is(button,a,summary):focus-visible{outline:3px solid #285a79;outline-offset:4px}
+.mori-design .primary,.mori-design .glass-control{border:1px solid var(--glass-border);border-radius:var(--radius-control);background:var(--glass);color:var(--ink);box-shadow:inset 0 1px 3px #fff,inset 0 -1px 4px #fff8,0 8px 22px #443a2b18;backdrop-filter:blur(20px) saturate(1.25);-webkit-backdrop-filter:blur(20px) saturate(1.25)}
+.mori-design .primary{min-height:56px;padding:14px 28px;font-size:17px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none}
+.mori-design .primary:hover:not(:disabled){background:rgba(255,255,255,.88)}
+.mori-design .primary .plus{font-size:27px;font-weight:300;line-height:1}
+.mori-design .secondary{border:1px solid var(--line);border-radius:var(--radius-control);background:#ffffff80;color:var(--ink);min-height:48px;padding:12px 22px}
+.mori-design .shelf{max-width:1064px;margin:auto;padding:30px 18px 24px;position:relative;min-height:740px;display:flex;flex-direction:column}
+.mori-design .shelf-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:24px;padding:0 4px}
+.mori-design h1{font-size:34px;line-height:1.205882353;letter-spacing:-.025em;margin:0 0 8px;font-weight:700}
+.mori-design .subtitle{color:var(--muted);font-size:16px;margin:0;line-height:1.5}
+.mori-design .account-mark{width:44px;height:44px;border:1px solid white;border-radius:50%;display:grid;place-items:center;color:#555b61;flex-shrink:0;background:linear-gradient(135deg,#fff,#dde3e6);box-shadow:0 0 0 1px #d9dadd,inset 0 0 0 3px #ffffffb3;margin-top:0}
+.mori-design .account-mark svg{width:25px;height:25px}
+.mori-design .shelf-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 15px}
+.mori-design .shelf-book{min-width:0;position:relative}
+.mori-design .shelf-link{color:inherit;text-decoration:none;display:block;border-radius:var(--radius-card)}
+.mori-design .shelf-cover{aspect-ratio:3/4;position:relative;border-radius:var(--radius-card);background:#e4e9e9;box-shadow:0 5px 10px #443a2b0a;overflow:hidden;isolation:isolate}
+.mori-design .shelf-cover img{width:100%;height:100%;object-fit:contain;display:block}
+.mori-design .status-badge{position:absolute;right:8px;top:9px;z-index:1;border:1px solid #ffffffa6;border-radius:999px;padding:4px 9px;font-size:12px;font-weight:600;background:rgba(255,255,255,.85);color:#33383a;box-shadow:inset 0 1px 2px #fff9,0 2px 8px #0001;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.mori-design .status-badge.action_required{color:#91251c}.mori-design .status-badge.review_ready{color:#24583b}
+.mori-design .book-title{font-size:17px;font-weight:600;line-height:1.294117647;margin:10px 36px 4px 4px;overflow-wrap:anywhere}
+.mori-design .book-meta{font-size:13px;color:var(--muted);margin:0 4px;overflow-wrap:anywhere;line-height:1.4}
+.mori-design .book-options{position:absolute;right:-7px;top:calc(100% - 49px);z-index:3}
+.mori-design .book-options[open]{z-index:4}
+.mori-design .book-options summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;font-size:20px;letter-spacing:1px;color:#38383c}
+.mori-design .book-options summary::-webkit-details-marker{display:none}
+.mori-design .book-options summary:hover,.mori-design .book-options[open] summary{background:#e7e6e480}
+.mori-design .book-options .book-remove{position:absolute;right:8px;top:42px;min-height:48px;white-space:nowrap;padding:12px 20px;background:#fff;border:1px solid #e3e0da;border-radius:14px;box-shadow:0 8px 24px #0002;color:var(--danger);font-size:14px}
+.mori-design .shelf-action{position:sticky;bottom:calc(16px + env(safe-area-inset-bottom));display:flex;justify-content:center;margin:22px auto 0;width:100%;z-index:2;isolation:isolate}
+.mori-design .shelf-action::before{content:"";position:absolute;inset:-6px 8px;z-index:-1;background:linear-gradient(100deg,#b7ba9d80,#c2cfd18c,#ead0ad91);filter:blur(20px);border-radius:999px;pointer-events:none}
+.mori-design .shelf-action button{width:76%;min-width:min(240px,100%);font-size:18px}
+.mori-design .empty-shelf{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:55px 0 90px}
+.mori-design .empty-shelf h2{font-size:24px;letter-spacing:-.035em;line-height:1.35;margin:34px 0 10px}
+.mori-design .empty-shelf p{color:var(--muted);font-size:16px;margin:0 0 28px}
+.mori-design .empty-shelf .shelf-action{position:relative;bottom:auto;margin:4px 0 0;max-width:310px}
+.mori-design .memory-cards{height:175px;width:215px;position:relative}
+.mori-design .memory-card{position:absolute;width:126px;height:164px;border:7px solid #fff;border-bottom-width:18px;border-radius:14px;box-shadow:0 8px 22px #453c2826;overflow:hidden;background:linear-gradient(175deg,#e1ecf1 0%,#b4d1db 40%,#86b4c4 41%,#608d9f 72%,#e0d7b9 73%)}
+.mori-design .memory-card:first-child{right:2px;top:0;transform:rotate(12deg);background:linear-gradient(145deg,#e9e4d5 20%,#bec8af 45%,#698066 46%,#ced5b5 75%)}
+.mori-design .memory-card:last-child{left:10px;top:16px;transform:rotate(-9deg)}
+.mori-design .message{padding:14px;background:#f0efeb;border-radius:12px;color:#54545a;font-size:13px;margin:20px 0 0}
+.mori-design .message:empty{display:none}.mori-design .message.error{background:#fff0ee;color:var(--danger)}
+.mori-design .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.preview-frame{container-type:inline-size}
+@container(min-width:600px){.mori-design .shelf{padding:40px 32px;min-height:720px}.mori-design .shelf-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}.mori-design .shelf-action{max-width:360px}.mori-design .empty-shelf{padding-top:80px}}
+@container(min-width:950px){.mori-design .shelf-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@container(max-width:340px){.mori-design .shelf{padding:26px 14px 24px}.mori-design .shelf-grid{gap:20px 12px}.mori-design h1{font-size:30px}.mori-design .subtitle{font-size:14px}.mori-design .book-title{font-size:16px}.mori-design .book-meta{font-size:12px}.mori-design .empty-shelf h2{font-size:22px}}
+@media(prefers-reduced-transparency:reduce),(prefers-contrast:more){.mori-design .primary,.mori-design .glass-control,.mori-design .status-badge{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none;border-color:#aaa}.mori-design .shelf-action::before{display:none}}
+@supports not (backdrop-filter:blur(1px)){.mori-design .primary,.mori-design .status-badge{background:#f4f3ef}}
+@media(prefers-reduced-motion:reduce){.mori-design *,.mori-design *::before,.mori-design *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

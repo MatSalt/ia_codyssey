@@ -1,0 +1,41 @@
+@import './tokens.css';
+.mori-button,.mori-icon-button {appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:56px;border:1px solid #fff;border-radius:999px;padding:12px 24px;background:var(--mori-glass);color:var(--mori-ink);font:600 17px/1.4 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo",sans-serif;box-shadow:var(--mori-shadow);backdrop-filter:blur(var(--mori-blur));-webkit-backdrop-filter:blur(var(--mori-blur));cursor:pointer;text-decoration:none;}
+.mori-button--secondary{background:#ffffff80;border-color:#d8d6d2;box-shadow:none;}
+.mori-button--danger{color:#9b3026;}
+.mori-button:disabled,.mori-icon-button:disabled{opacity:.48;cursor:not-allowed;}
+.mori-icon-button{width:44px;min-height:44px;padding:8px;flex-shrink:0;font-size:24px;}
+.mori-panel{padding:20px;border:1px solid #fff;border-radius:var(--mori-panel-radius);background:var(--mori-glass);box-shadow:var(--mori-shadow);backdrop-filter:blur(var(--mori-blur));}
+.mori-screen-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;}
+.mori-screen-header h1{font-size:32px;line-height:1.25;letter-spacing:-.04em;margin:0;font-weight:700;}
+.mori-screen-header p{color:var(--mori-muted);margin:8px 0 0;font-size:17px;}
+.mori-header-trailing{margin-left:auto;}
+.mori-bottom-action{position:sticky;bottom:0;z-index:3;padding:16px 0 calc(16px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--mori-surface));}
+.mori-bottom-action>.mori-button{width:100%;}
+.mori-photo{overflow:hidden;border-radius:var(--mori-radius);background:#eeede8;display:grid;place-items:center;}
+.mori-photo--portrait{aspect-ratio:3/4;}.mori-photo--square{aspect-ratio:1;}
+.mori-photo>img{height:100%;width:100%;min-height:0;object-fit:contain;}.mori-photo--cover>img{object-fit:cover;}
+.mori-thumbnail{width:64px;min-width:64px;height:72px;padding:3px;border:2px solid transparent;border-radius:12px;background:transparent;box-shadow:none;}
+.mori-thumbnail[aria-pressed=true]{border-color:#302826;}.mori-thumbnail>img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+.mori-login{max-width:426px;margin:0 auto;color:var(--mori-ink);padding:22px var(--mori-space) calc(28px + env(safe-area-inset-bottom));}
+.mori-wordmark{font:32px/1.25 Georgia,serif;letter-spacing:.04em;margin-bottom:18px;}
+.mori-login h1{font-size:32px;font-weight:700;line-height:1.3;letter-spacing:-.045em;margin:0 0 8px;}
+.mori-login-subtitle{color:var(--mori-muted);font-size:16px;line-height:1.55;margin:0 0 22px;letter-spacing:-.035em;}
+.mori-login-hero{width:100%;aspect-ratio:774/830;border-radius:24px;overflow:hidden;background:#e6e8e2;}
+.mori-login-hero>img{width:100%;height:100%;object-fit:cover;}
+.mori-memory-caption{text-align:center;font-family:Georgia,"Nanum Myeongjo","AppleMyungjo",serif;font-size:15px;line-height:1.6;color:#666268;letter-spacing:.035em;margin:16px 0 26px;}
+.mori-login-actions .stack{gap:12px;}.mori-login-actions .oauth-button{display:flex;align-items:center;justify-content:center;gap:14px;width:100%;min-height:56px;padding:12px 18px;font-size:17px;line-height:1.4;border-radius:999px;font-weight:600;text-decoration:none;box-shadow:var(--mori-shadow);border:1px solid white;background:var(--mori-glass);}
+.mori-login-actions .oauth-button.kakao{background:#fee500;border-color:#fee500;box-shadow:0 8px 18px #c1a92d20;}
+.mori-login-actions .oauth-mark{width:25px;height:25px;display:grid;place-items:center;flex-shrink:0;}
+.mori-login-actions .oauth-button.kakao .oauth-mark:before{content:'';display:block;width:23px;height:19px;background:#302020;border-radius:50%;clip-path:polygon(0 0,100% 0,100% 83%,45% 83%,16% 100%,21% 76%,0 76%);}
+.mori-login-actions .oauth-button.google .oauth-mark{font:bold 28px/1 Arial;color:#4285f4;}
+.mori-login-policy{text-align:center;color:var(--mori-muted);font-size:11px;line-height:1.7;margin:21px 0 0;}
+.mori-login-feedback{font-size:14px;margin-top:16px;}
+.mori-hero-placeholder{height:100%;display:grid;place-content:center;text-align:center;padding:24px;color:#62685d;background:linear-gradient(155deg,#dce8e9,#e5e6db 60%,#c8d1c7);}
+body:has(.mori-login) .app-header,body:has(.mori-login) footer{display:none;}
+body:has(.mori-login) main#main-content{max-width:none;padding:0;min-height:100dvh;}
+:is(.mori-button,.mori-icon-button,.mori-thumbnail):focus-visible{outline:3px solid #285a79;outline-offset:4px;}
+@supports not (backdrop-filter:blur(1px)){.mori-button,.mori-icon-button,.mori-panel{background:#f8f7f4;}}
+@media(prefers-reduced-transparency:reduce){.mori-button,.mori-icon-button,.mori-panel{background:#f8f7f4;backdrop-filter:none;}}
+@media(prefers-contrast:more){.mori-button,.mori-icon-button,.mori-panel{border-color:#68686d;box-shadow:none;}}
+@media(prefers-reduced-motion:reduce){.mori-button,.mori-icon-button{transition:none;}}
+@media(min-width:768px){.mori-login{padding-top:40px;padding-bottom:40px;}}

@@ -1,0 +1,30 @@
+# Server credentials and local configuration
+.env
+.env.*
+!.env.example
+*service-account*.json
+*service_account*.json
+*firebase-adminsdk*.json
+credentials*.json
+secrets/
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+# Frontend and test output
+node_modules/
+dist/
+frontend/config.js
+playwright-report/
+test-results/
+# Local temporary files
+.DS_Store
+*.log
+*.tmp
+*.swp
+story-analytics-assistant-firebase-adminsdk-fbsvc-94b5208653
+story-analytics-assistant-firebase-adminsdk-fbsvc-94b5208653.json

@@ -1,0 +1,288 @@
+{
+  "sources": [
+    {
+      "kind": "reference",
+      "month": "",
+      "file": "admin_codes.zip",
+      "official_filename": "admin_codes.zip",
+      "source_url": "https://data.seoul.go.kr/dataVisual/seoul/capitalRegionLivingMigration.do",
+      "post_parameters": {
+        "infId": "DOWNLOAD",
+        "infSeq": "4",
+        "seq": "18"
+      },
+      "bytes": 2047792,
+      "sha256": "69e8c5dad71dffbc6d0d9be8f9ad607e3d02e72a2577cbaf1b9ba795518226e4",
+      "downloaded_at_utc": "2026-10-23T06:21:24.796909+00:00",
+      "download_url": "https://datafile.seoul.go.kr/bigfile/iot/inf/nio_download.do?&useCache=false",
+      "members": [
+        {
+          "name": "SEOUL_ADMI/ADMI_202301.csv",
+          "bytes": 305728,
+          "crc": 3764263436
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202302.csv",
+          "bytes": 305965,
+          "crc": 1217402631
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202303.csv",
+          "bytes": 305965,
+          "crc": 411224992
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202304.csv",
+          "bytes": 305965,
+          "crc": 1938807444
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202305.csv",
+          "bytes": 306129,
+          "crc": 73789878
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202306.csv",
+          "bytes": 306208,
+          "crc": 1732394194
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202307.csv",
+          "bytes": 310888,
+          "crc": 2447905686
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202308.csv",
+          "bytes": 311050,
+          "crc": 1618826945
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202309.csv",
+          "bytes": 311050,
+          "crc": 250692304
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202310.csv",
+          "bytes": 311050,
+          "crc": 3357627949
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202311.csv",
+          "bytes": 311129,
+          "crc": 400587585
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202312.csv",
+          "bytes": 311129,
+          "crc": 824634477
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202401.csv",
+          "bytes": 313974,
+          "crc": 2926539310
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202402.csv",
+          "bytes": 318348,
+          "crc": 3877298470
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202403.csv",
+          "bytes": 318421,
+          "crc": 2738918091
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202404.csv",
+          "bytes": 318421,
+          "crc": 2745725475
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202405.csv",
+          "bytes": 318421,
+          "crc": 1824230134
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202406.csv",
+          "bytes": 318421,
+          "crc": 3875440072
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202407.csv",
+          "bytes": 318421,
+          "crc": 703429917
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202408.csv",
+          "bytes": 318504,
+          "crc": 1339571086
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202409.csv",
+          "bytes": 318516,
+          "crc": 3146379463
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202410.csv",
+          "bytes": 318516,
+          "crc": 3670436169
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202411.csv",
+          "bytes": 318516,
+          "crc": 3040571954
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202412.csv",
+          "bytes": 318516,
+          "crc": 87842751
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202501.csv",
+          "bytes": 318516,
+          "crc": 875372977
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202502.csv",
+          "bytes": 318605,
+          "crc": 1603350721
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202503.csv",
+          "bytes": 318605,
+          "crc": 964333021
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202504.csv",
+          "bytes": 318480,
+          "crc": 1608860125
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202505.csv",
+          "bytes": 318480,
+          "crc": 932840133
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202506.csv",
+          "bytes": 318480,
+          "crc": 2400962541
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202507.csv",
+          "bytes": 318480,
+          "crc": 3882124533
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202508.csv",
+          "bytes": 318672,
+          "crc": 2098664261
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202509.csv",
+          "bytes": 318672,
+          "crc": 1309387490
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202510.csv",
+          "bytes": 318589,
+          "crc": 247293347
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202511.csv",
+          "bytes": 318589,
+          "crc": 948249741
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202512.csv",
+          "bytes": 318799,
+          "crc": 553947814
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202601.csv",
+          "bytes": 318799,
+          "crc": 3511687739
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202602.csv",
+          "bytes": 319466,
+          "crc": 3893776449
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202603.csv",
+          "bytes": 319466,
+          "crc": 3093580135
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202604.csv",
+          "bytes": 319466,
+          "crc": 3528130772
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202605.csv",
+          "bytes": 319562,
+          "crc": 1016592187
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202606.csv",
+          "bytes": 319562,
+          "crc": 4026715090
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202607.csv",
+          "bytes": 331174,
+          "crc": 3352225062
+        },
+        {
+          "name": "SEOUL_ADMI/ADMI_202608.csv",
+          "bytes": 331174,
+          "crc": 1029019884
+        }
+      ],
+      "license": "서울특별시 출처 표시. 각 공식 데이터셋의 공공누리 제1유형 조건 적용",
+      "path": "data/raw/locations/admin/admin_codes.zip",
+      "previous_location": "tmp/2026-10-26/previous-work/data/raw/tourism_longterm/admin_codes.zip",
+      "source_evidence": "tmp/2026-10-26/previous-results/data/products/seoul-tourism-longterm-2023-2025-v1/sources.json",
+      "historical_path": "data/raw/references/mobility_definitions/admin_codes.zip"
+    },
+    {
+      "file": "calendar_data_2026.html",
+      "path": "data/raw/calendar/calendar_data_2026.html",
+      "bytes": 81743,
+      "sha256": "a3d8f46a1aeb42c2c60bdf3a17ae7b399de3ff4e519d9396f851406f291856de",
+      "previous_location": "tmp/2026-10-26/previous-work/data/raw/tourism_longterm/calendar_data_2026.html",
+      "source_evidence": "tmp/2026-10-26/previous-work/data/raw/references/ official reference pages retained",
+      "historical_path": "data/raw/references/calendar/calendar_data_2026.html",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2026"
+    },
+    {
+      "file": "calendar_data_2023.html",
+      "path": "data/raw/calendar/calendar_data_2023.html",
+      "bytes": 79051,
+      "sha256": "833e1ad00f94dedb24bd70482af578b7866047d692833b3e5dc68f57a6ca887b",
+      "previous_location": "tmp/2026-10-26/previous-work/data/raw/tourism_longterm/calendar_data_2023.html",
+      "source_evidence": "tmp/2026-10-26/previous-work/data/raw/references/ official reference pages retained",
+      "historical_path": "data/raw/references/calendar/calendar_data_2023.html",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2023"
+    },
+    {
+      "file": "calendar_data_2025.html",
+      "path": "data/raw/calendar/calendar_data_2025.html",
+      "bytes": 81709,
+      "sha256": "746652a37681c7ef5e178ff712e91a3893064ac60013c36cdffedbb3f525afcc",
+      "previous_location": "tmp/2026-10-26/previous-work/data/raw/tourism_longterm/calendar_data_2025.html",
+      "source_evidence": "tmp/2026-10-26/previous-work/data/raw/references/ official reference pages retained",
+      "historical_path": "data/raw/references/calendar/calendar_data_2025.html",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2025"
+    },
+    {
+      "file": "calendar_data_2024.html",
+      "path": "data/raw/calendar/calendar_data_2024.html",
+      "bytes": 80762,
+      "sha256": "70cb9bef3004d54defc91a518dfca4ce6dc2659fdea296f1a82c5af11c7bcb0b",
+      "previous_location": "tmp/2026-10-26/previous-work/data/raw/tourism_longterm/calendar_data_2024.html",
+      "source_evidence": "tmp/2026-10-26/previous-work/data/raw/references/ official reference pages retained",
+      "historical_path": "data/raw/references/calendar/calendar_data_2024.html",
+      "source_url": "https://astro.kasi.re.kr/kor/life/post/calendarData?search_year=2024"
+    }
+  ],
+  "note": "Current reference originals only. Full previous acquisition record retained under tmp/2026-10-27/unused_data/metadata/history/."
+}

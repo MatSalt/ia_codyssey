@@ -1,0 +1,5 @@
+aimori.kro.kr {
+    encode zstd gzip
+    reverse_proxy web:8000
+    # No access log: OAuth callback codes and signed URLs must not be logged.
+}

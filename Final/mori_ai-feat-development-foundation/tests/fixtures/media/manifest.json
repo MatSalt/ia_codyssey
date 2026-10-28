@@ -1,0 +1,217 @@
+{
+  "fixtures": [
+    {
+      "path": "orientation-1.png",
+      "sha256": "e0a3861e1492598897b8aee353f8b06b944069e94b4714516dfb8dd020d54eda",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 1,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "orientation-2.png",
+      "sha256": "423c083a64b7553f56b5beb141e9623c1a82593e6fbb898436f7d6d5ac49210e",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 2,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "orientation-3.png",
+      "sha256": "ea63ca84d639e9dc7fd18fb329f24beab9bf474ef9c7d09688ba4ce6a5aba6bc",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 3,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "orientation-4.png",
+      "sha256": "3582d535f192c4c8fee353999b9ad1d7fa2bf6d4ad5f6e4fbb842e15387ea3b1",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 4,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "orientation-5.png",
+      "sha256": "0b52c55260d77b5ee614a6321cb7a5c8b986dee8db44f954aafd468d69b7879a",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 5,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        30,
+        40
+      ],
+      "input_is_3_4": true
+    },
+    {
+      "path": "orientation-6.png",
+      "sha256": "ced4a1b9f6b67686151d6e9e8bede5f93bf721d4ebd0c8273f1d02597ee1d136",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 6,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        30,
+        40
+      ],
+      "input_is_3_4": true
+    },
+    {
+      "path": "orientation-7.png",
+      "sha256": "6603c53df4779570cb0d4607e3dd0ebddd4adf5a32d161e194cf156fb41586d7",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 7,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        30,
+        40
+      ],
+      "input_is_3_4": true
+    },
+    {
+      "path": "orientation-8.png",
+      "sha256": "f923b752c24818bb6f6870ff85c20ae49b951dd00c0a71219cc75e68c7f1f0e8",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 8,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        30,
+        40
+      ],
+      "input_is_3_4": true
+    },
+    {
+      "path": "alpha.png",
+      "sha256": "9283a1fbcdc9d61428028638488caafe79a124a4dbf48b6fff6e18d9452cb131",
+      "stored_size": [
+        30,
+        40
+      ],
+      "orientation": 1,
+      "alpha": true,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        30,
+        40
+      ],
+      "input_is_3_4": true
+    },
+    {
+      "path": "photo.jpg",
+      "sha256": "65292464c3b4e346239f7f0d9f23309854d7927a576b082583795eecd1f6f1ed",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 1,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "lossless.webp",
+      "sha256": "b64b03e0837c3b76615bef5cf7326fb33d09ee18fbc518348b33848943ec500a",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 1,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "srgb-icc.png",
+      "sha256": "95d6d4b704455b7b403d23cc7bbe2f50f8f6a9ec45f9e1b2e844ce0dc43602bf",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 1,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        40,
+        30
+      ],
+      "input_is_3_4": false
+    },
+    {
+      "path": "primary-second.heic",
+      "sha256": "c11364920677d8b812fe55af7c8f3dce8ae180c98f7d0fea7d0a0f36ffdaae5b",
+      "stored_size": [
+        40,
+        30
+      ],
+      "orientation": 1,
+      "alpha": false,
+      "ownership": "generated synthetic; no user data",
+      "expected_size": [
+        30,
+        40
+      ],
+      "input_is_3_4": true
+    }
+  ],
+  "not_executed": [
+    "actual iPhone HEIC HDR/PQ/HLG/gain-map",
+    "wide-gamut reference comparison",
+    "manual iPhone visual comparison"
+  ]
+}

@@ -1,0 +1,50 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {QueryClient} from '@tanstack/query-core';
+const session=await import(process.argv[2]);
+test('logout and forced session reset erase mutation intents and signal local file and URL cleanup',async()=>{
+ globalThis.window=new EventTarget();
+ const cache=new QueryClient();
+ const intent=session.requestIntents.get('alpha:album:publish',{expected_version:7});
+ let cleanup=0;window.addEventListener('mori:logout',()=>cleanup++);
+ cache.setQueryData(['viewer','alpha','album'],{media_access:[{url:'/private/signed-alpha'}]});
+ cache.setQueryData(['generation','alpha','album'],{run_id:'private-alpha-run'});
+ cache.setQueryData(['dev-config'],{dev_auth_enabled:true,dev_ai_enabled:true});
+ await session.resetSession(cache);
+ assert.equal(cleanup,1);
+ assert.equal(session.requestIntents.peek('alpha:album:publish'),undefined);
+ assert.equal(cache.getQueryData(['viewer','alpha','album']),undefined);
+ assert.equal(cache.getQueryData(['generation','alpha','album']),undefined);
+ assert.deepEqual(cache.getQueryData(['dev-config']),{dev_auth_enabled:true,dev_ai_enabled:true});
+ assert.notEqual(session.requestIntents.get('beta:album:publish',{expected_version:2}).key,intent.key);
+ session.requestIntents.clear();cache.clear();delete globalThis.window;
+});
+test('a 401 clears signed query data while preserving same-user input and request identity',async()=>{
+ assert.ok(session.reviewDrafts);
+ globalThis.window=new EventTarget();const cache=new QueryClient();let cleaned=0;let expired=0;
+ window.addEventListener('mori:logout',()=>cleaned++);window.addEventListener('mori:session-expired',()=>expired++);
+ const pending=session.requestIntents.get('alpha:a:generation',{expected_version:6});
+ session.reviewDrafts.selectOwner('alpha');
+ session.reviewDrafts.remember('alpha','a',{p:{text:'잃지 않을 입력',baseline:'기존',version:9}});
+ cache.setQueryData(['viewer','alpha','a'],{url:'/private/old'});
+ await session.resetSession(cache,'expired');
+ assert.equal(cleaned,0);assert.equal(expired,1);assert.equal(cache.getQueryData(['viewer','alpha','a']),undefined);
+ assert.deepEqual(session.requestIntents.get('alpha:a:generation',{expected_version:90}),pending);
+ assert.deepEqual(session.reviewDrafts.restore('alpha','a'),{p:{text:'잃지 않을 입력',baseline:'기존',version:9}});
+ assert.deepEqual(session.reviewDrafts.restore('beta','a'),{});
+ await session.resetSession(cache);
+ session.reviewDrafts.selectOwner('alpha');assert.deepEqual(session.reviewDrafts.restore('alpha','a'),{});
+ session.reviewDrafts.clear();cache.clear();delete globalThis.window;
+});
+
+test('a different authenticated user clears old input memory without aborting the new user screen',()=>{
+ assert.equal(typeof session.selectSessionOwner,'function');
+ globalThis.window=new EventTarget();let cleared=0;let loggedOut=0;
+ window.addEventListener('mori:clear-private-memory',()=>cleared++);window.addEventListener('mori:logout',()=>loggedOut++);
+ session.selectSessionOwner('alpha');session.reviewDrafts.remember('alpha','a',{p:{text:'private alpha',baseline:'',version:4}});
+ session.requestIntents.get('alpha:a:resume',{run_id:'r',expected_version:8});
+ session.selectSessionOwner('alpha');assert.equal(cleared,0);
+ session.selectSessionOwner('beta');assert.equal(cleared,1);assert.equal(loggedOut,0);
+ assert.equal(session.requestIntents.peek('alpha:a:resume'),undefined);assert.deepEqual(session.reviewDrafts.restore('alpha','a'),{});
+ session.reviewDrafts.clear();session.requestIntents.clear();delete globalThis.window;
+});

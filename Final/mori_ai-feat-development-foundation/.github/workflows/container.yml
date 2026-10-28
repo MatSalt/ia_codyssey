@@ -1,0 +1,46 @@
+name: Build verified container
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: container-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Check deployment failure paths
+        run: python3 tests/deploy/test_lightsail_deploy.py
+      - name: Build test image (includes frontend checks)
+        run: docker build --platform linux/amd64 --target verification -t mori-ai:verify-tests .
+      - name: Run full backend suite with isolated PostgreSQL
+        run: MORI_VERIFY_TEST_IMAGE=mori-ai:verify-tests bash scripts/verify-db.sh backend/tests
+      - name: Build runtime image
+        env:
+          REVISION: ${{ github.sha }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          image="ghcr.io/${REPOSITORY,,}:sha-${REVISION}"
+          docker build --platform linux/amd64 --target runtime \
+            --label "org.opencontainers.image.revision=${REVISION}" \
+            --label "org.opencontainers.image.source=https://github.com/${REPOSITORY}" \
+            -t "$image" .
+      - name: Publish verified image
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: ${{ github.actor }}
+          REVISION: ${{ github.sha }}
+          REPOSITORY: ${{ github.repository }}
+        run: |
+          trap 'docker logout ghcr.io >/dev/null 2>&1' EXIT
+          printf '%s' "$GH_TOKEN" | docker login ghcr.io -u "$GH_USER" --password-stdin
+          image="ghcr.io/${REPOSITORY,,}:sha-${REVISION}"
+          docker push "$image"
+          printf 'Verified image: `%s`\n' "$image" >> "$GITHUB_STEP_SUMMARY"
